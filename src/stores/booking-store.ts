@@ -4,7 +4,7 @@ import { Branch } from '@/mocks/branch-data'
 
 type BookingState = {
   selectedBranch: Branch | null
-  setSelectedBranch: (branch: Branch) => void
+  setSelectedBranch: (branch: Branch | null) => void
   clearBooking: () => void
 }
 
