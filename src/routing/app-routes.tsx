@@ -4,7 +4,8 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { AppShell } from '@/app/shell/app-shell'
 import { MainLayout } from '@/layouts/main-layout'
 import AppointmentDetailPage from '@/pages/appointment-detail-page'
-import BookingPage from '@/pages/booking-page'
+import BookingBranchPage from '@/pages/booking-branch-page'
+import BookingServicesPage from '@/pages/booking-services-page'
 import GalleryPage from '@/pages/gallery-page'
 import HomePage from '@/pages/home-page'
 import LoginPage from '@/pages/login-page'
@@ -23,7 +24,9 @@ export function AppRoutes() {
           <Route path={ROUTE_PATHS.home} element={<HomePage />} />
           <Route path={ROUTE_PATHS.notifications} element={<NotificationsPage />} />
           <Route path={ROUTE_PATHS.appointmentDetailBase} element={<AppointmentDetailPage />} />
-          <Route path={ROUTE_PATHS.booking} element={<BookingPage />} />
+          <Route path={ROUTE_PATHS.booking} element={<Navigate replace to={ROUTE_PATHS.bookingBranch} />} />
+          <Route path={ROUTE_PATHS.bookingBranch} element={<BookingBranchPage />} />
+          <Route path={ROUTE_PATHS.bookingServices} element={<BookingServicesPage />} />
           <Route path={ROUTE_PATHS.promotions} element={<PromotionsPage />} />
           <Route path={ROUTE_PATHS.promotionDetailBase} element={<PromotionDetailPage />} />
           <Route path={ROUTE_PATHS.services} element={<ServicesPage />} />
