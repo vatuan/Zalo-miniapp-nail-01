@@ -1,6 +1,5 @@
 import React from 'react'
-import { Navigate, Route } from 'react-router-dom'
-import { AnimationRoutes } from 'zmp-ui'
+import { Navigate, Route, Routes } from 'react-router-dom'
 
 import { AppShell } from '@/app/shell/app-shell'
 import { PrivateRoute } from '@/guards/private-route'
@@ -15,7 +14,7 @@ import { ROUTE_PATHS } from '@/routing/paths'
 
 export function AppRoutes() {
   return (
-    <AnimationRoutes>
+    <Routes>
       <Route element={<AppShell />}>
         <Route path={ROUTE_PATHS.auth} element={<AuthPage />} />
 
@@ -32,6 +31,6 @@ export function AppRoutes() {
 
         <Route path="*" element={<Navigate replace to={ROUTE_PATHS.home} />} />
       </Route>
-    </AnimationRoutes>
+    </Routes>
   )
 }
