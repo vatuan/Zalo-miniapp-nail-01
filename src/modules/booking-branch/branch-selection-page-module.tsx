@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { HiOutlineMagnifyingGlass } from 'react-icons/hi2'
 import { useNavigate } from 'react-router-dom'
-import { Box, Text, useSnackbar } from 'zmp-ui'
+import { Box, Button, Text, useSnackbar } from 'zmp-ui'
 
 import { useConfigurePageHeader } from '@/layouts/page-layout-context'
 import { Branch, mockBranches, mockGpsAvailable } from '@/mocks/branch-data'
@@ -113,7 +113,7 @@ export function BranchSelectionPageModule() {
 
   return (
     <Box className="flex min-h-full flex-col bg-app-bg">
-      <Box className="flex flex-1 flex-col gap-4 px-4 pb-28 pt-4">
+      <Box className="flex flex-1 flex-col gap-4 px-4 pb-5 pt-4">
         <Box className="flex flex-col gap-3">
           <Text className="text-base font-semibold text-text-primary">Chọn chi nhánh</Text>
           <BranchSearchInput value={searchQuery} onChange={setSearchQuery} />
@@ -137,13 +137,13 @@ export function BranchSelectionPageModule() {
                   <HiOutlineMagnifyingGlass size={22} />
                 </Box>
                 <Text className="text-sm text-text-primary">Không tìm thấy chi nhánh phù hợp</Text>
-                <button
-                  type="button"
-                  className="rounded-full bg-button-primary-bg px-4 py-1.5 text-xs font-semibold text-button-primary-fg"
+                <Button
+                  size="small"
+                  className="rounded-full bg-button-primary-bg text-xs font-semibold text-button-primary-fg"
                   onClick={() => setSearchQuery('')}
                 >
                   Xóa tìm kiếm
-                </button>
+                </Button>
               </Box>
             ) : (
               <Box className="flex flex-col gap-3">
@@ -199,9 +199,9 @@ export function BranchSelectionPageModule() {
         )}
       </Box>
 
-      <Box className="sticky bottom-0 left-0 right-0 border-t border-border-soft bg-surface-primary px-4 py-3 shadow-[0_-4px_12px_rgba(0,0,0,0.04)]">
-        <button
-          type="button"
+      <Box className="sticky -bottom-[0.5px] left-0 right-0 border-t border-border-soft bg-surface-primary px-4 py-3 shadow-[0_-4px_12px_rgba(0,0,0,0.04)]">
+        <Button
+          // type="button"
           disabled={isConfirmDisabled}
           onClick={handleConfirm}
           className={clsx(
@@ -212,7 +212,7 @@ export function BranchSelectionPageModule() {
           )}
         >
           Xác nhận chi nhánh
-        </button>
+        </Button>
       </Box>
     </Box>
   )
