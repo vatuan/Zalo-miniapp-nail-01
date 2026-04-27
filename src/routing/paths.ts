@@ -5,6 +5,7 @@ export const ROUTE_PATHS = {
   booking: '/booking',
   bookingBranch: '/booking/branch',
   bookingServices: '/booking/services',
+  bookingTechnician: '/booking/technician',
   promotions: '/promotions',
   promotionDetailBase: '/promotions/:id',
   services: '/services',

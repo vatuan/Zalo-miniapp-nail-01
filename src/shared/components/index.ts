@@ -1,4 +1,5 @@
 export * from './auth-toggle-button'
+export * from './booking-progress-bar'
 export * from './bottom-navigation'
 export * from './coming-soon-page'
 export * from './page-header'

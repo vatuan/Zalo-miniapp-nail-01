@@ -6,6 +6,7 @@ import { MainLayout } from '@/layouts/main-layout'
 import AppointmentDetailPage from '@/pages/appointment-detail-page'
 import BookingBranchPage from '@/pages/booking-branch-page'
 import BookingServicesPage from '@/pages/booking-services-page'
+import BookingTechnicianPage from '@/pages/booking-technician-page'
 import GalleryPage from '@/pages/gallery-page'
 import HomePage from '@/pages/home-page'
 import LoginPage from '@/pages/login-page'
@@ -27,6 +28,7 @@ export function AppRoutes() {
           <Route path={ROUTE_PATHS.booking} element={<Navigate replace to={ROUTE_PATHS.bookingBranch} />} />
           <Route path={ROUTE_PATHS.bookingBranch} element={<BookingBranchPage />} />
           <Route path={ROUTE_PATHS.bookingServices} element={<BookingServicesPage />} />
+          <Route path={ROUTE_PATHS.bookingTechnician} element={<BookingTechnicianPage />} />
           <Route path={ROUTE_PATHS.promotions} element={<PromotionsPage />} />
           <Route path={ROUTE_PATHS.promotionDetailBase} element={<PromotionDetailPage />} />
           <Route path={ROUTE_PATHS.services} element={<ServicesPage />} />

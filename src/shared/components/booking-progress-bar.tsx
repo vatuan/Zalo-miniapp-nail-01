@@ -17,7 +17,7 @@ export function BookingProgressBar({ currentStep, totalSteps = 5 }: BookingProgr
           Bước {safeStep}/{totalSteps}
         </Text>
       </Box>
-      <Box className="h-1 w-full overflow-hidden rounded bg-pink-100">
+      <Box className="h-1 w-full overflow-hidden rounded bg-brand-pink-soft">
         <Box className="h-full rounded bg-brand-pink transition-all duration-300" style={{ width: `${percent}%` }} />
       </Box>
     </Box>
