@@ -151,3 +151,9 @@ Task: <your task>
 Constraints: keep current stack/configs, no tech replacement.
 Output: changed files + architecture notes + compliance checklist.
 ```
+
+Color policy for all future prompts:
+- Define color tokens in `/Users/mac/Documents/tuanva/freelancer/zalo-miniapp-nail-02/src/config/theme/colors.css`.
+- Map those tokens in `/Users/mac/Documents/tuanva/freelancer/zalo-miniapp-nail-02/tailwind.config.js`.
+- Use Tailwind semantic classes only (e.g. `text-text-primary`, `bg-app-bg`, `border-card-border`).
+- Never hardcode `#hex`, `rgb`, `hsl`, or arbitrary color utilities like `text-[var(--...)]` in UI files.

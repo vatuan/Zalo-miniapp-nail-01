@@ -1,0 +1,35 @@
+:root {
+  /* Nail app palette: modern + youthful */
+  --color-brand-pink: #f075ae;
+  --color-brand-pink-soft: #f8b8d4;
+  --color-brand-gold: #f7db91;
+  --color-brand-cream: #fffdce;
+  --color-brand-green: #9bc264;
+  --color-brand-green-soft: #cfe3a8;
+
+  /* App semantic tokens */
+  --color-bg-app: #fffdce;
+  --color-surface-primary: #ffffff;
+  --color-surface-muted: #fff6dc;
+
+  --color-text-primary: #3e2a33;
+  --color-text-secondary: #7f5a67;
+  --color-text-inverse: #ffffff;
+
+  --color-border-default: #f0d7a0;
+  --color-border-soft: #f6e9be;
+
+  --color-nav-surface: #ffffff;
+  --color-nav-border: #f2dfad;
+  --color-nav-item-active-bg: #f075ae;
+  --color-nav-text-default: #7f5a67;
+  --color-nav-text-active: #ffffff;
+
+  --color-card-surface: #ffffff;
+  --color-card-border: #f0d7a0;
+
+  --color-button-primary-bg: #f075ae;
+  --color-button-primary-fg: #ffffff;
+  --color-button-secondary-bg: #9bc264;
+  --color-button-secondary-fg: #ffffff;
+}

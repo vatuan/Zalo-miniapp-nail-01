@@ -1,4 +1,5 @@
 import 'zmp-ui/zaui.css'
+import './config/theme/colors.css'
 import './css/app.scss'
 import './polyfills'
 

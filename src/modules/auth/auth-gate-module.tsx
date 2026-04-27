@@ -28,13 +28,13 @@ export function AuthGateModule() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f7f8fa] px-4 pt-[calc(var(--zaui-safe-area-inset-top,0px)+24px)]">
-      <div className="rounded-xl border border-[#e9eaec] bg-white p-4">
-        <Text size="xLarge" className="font-semibold">
+    <div className="min-h-screen bg-app-bg px-4 pt-[calc(var(--zaui-safe-area-inset-top,0px)+24px)]">
+      <div className="rounded-xl border border-card-border bg-card-surface p-4">
+        <Text size="xLarge" className="font-semibold text-text-primary">
           Mock Auth Gate
         </Text>
-        <Text className="mt-2">Private tab detected. Please login to continue.</Text>
-        <Text className="mt-1 text-[#6f7071]">Redirect after login: {redirectPath}</Text>
+        <Text className="mt-2 text-text-primary">Private tab detected. Please login to continue.</Text>
+        <Text className="mt-1 text-text-secondary">Redirect after login: {redirectPath}</Text>
 
         <div className="mt-4 flex gap-2">
           <Button onClick={handleLogin}>Login (Mock)</Button>

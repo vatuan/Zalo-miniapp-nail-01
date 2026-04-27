@@ -6,13 +6,23 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #f7f8fa;
-  color: #0d0d0d;
+  background-color: var(--color-bg-app);
+  color: var(--color-text-primary);
   user-select: none;
 }
 
 .zaui-text {
   font-weight: inherit;
+}
+
+.zaui-btn-primary {
+  background-color: var(--color-button-primary-bg);
+  color: var(--color-button-primary-fg);
+}
+
+.zaui-btn-secondary {
+  background-color: var(--color-button-secondary-bg);
+  color: var(--color-button-secondary-fg);
 }
 
 @tailwind base;

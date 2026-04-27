@@ -4,31 +4,46 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ng: {
-          10: 'rgb(var(--color-ng-10) / <alpha-value>)',
+        brand: {
+          pink: 'var(--color-brand-pink)',
+          'pink-soft': 'var(--color-brand-pink-soft)',
+          gold: 'var(--color-brand-gold)',
+          cream: 'var(--color-brand-cream)',
+          green: 'var(--color-brand-green)',
+          'green-soft': 'var(--color-brand-green-soft)',
         },
-        background: {
-          DEFAULT: 'var(--color-background)',
+        app: {
+          bg: 'var(--color-bg-app)',
         },
-        primary: {
-          DEFAULT: 'rgb(var(--color-primary-rgb) / <alpha-value>)',
-          pressed: 'var(--color-primary-pressed)',
-          foreground: 'var(--color-primary-foreground)',
-        },
-        inactive: {
-          DEFAULT: 'var(--color-inactive)',
-          foreground: 'var(--color-inactive-foreground)',
+        surface: {
+          primary: 'var(--color-surface-primary)',
+          muted: 'var(--color-surface-muted)',
         },
         text: {
-          DEFAULT: 'var(--color-text)',
+          primary: 'var(--color-text-primary)',
           secondary: 'var(--color-text-secondary)',
-          subtle: 'var(--color-text-subtle)',
+          inverse: 'var(--color-text-inverse)',
         },
         border: {
-          DEFAULT: 'var(--color-border)',
+          default: 'var(--color-border-default)',
+          soft: 'var(--color-border-soft)',
         },
-        divider: {
-          DEFAULT: 'var(--color-divider)',
+        nav: {
+          surface: 'var(--color-nav-surface)',
+          border: 'var(--color-nav-border)',
+          'item-active-bg': 'var(--color-nav-item-active-bg)',
+          'text-default': 'var(--color-nav-text-default)',
+          'text-active': 'var(--color-nav-text-active)',
+        },
+        card: {
+          surface: 'var(--color-card-surface)',
+          border: 'var(--color-card-border)',
+        },
+        button: {
+          'primary-bg': 'var(--color-button-primary-bg)',
+          'primary-fg': 'var(--color-button-primary-fg)',
+          'secondary-bg': 'var(--color-button-secondary-bg)',
+          'secondary-fg': 'var(--color-button-secondary-fg)',
         },
       },
       animation: {

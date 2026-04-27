@@ -6,7 +6,7 @@ import { BottomNavigation } from '@/shared/components/bottom-navigation'
 
 export function MainLayout() {
   return (
-    <div className="min-h-screen bg-[#f7f8fa] text-[#0d0d0d]">
+    <div className="min-h-screen bg-app-bg text-text-primary">
       <main className="px-4 pb-[calc(var(--zaui-safe-area-inset-bottom,0px)+76px)] pt-[calc(var(--zaui-safe-area-inset-top,0px)+16px)]">
         <div className="mb-4 flex justify-end">
           <AuthToggleButton />
