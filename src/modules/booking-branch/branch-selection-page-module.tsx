@@ -129,7 +129,7 @@ export function BranchSelectionPageModule() {
               <Text className="text-sm text-text-primary">Không tìm thấy chi nhánh phù hợp</Text>
               <button
                 type="button"
-                className="rounded-full bg-button-primary-bg px-4 py-1.5 text-xs font-semibold text-button-primary-fg"
+                className="rounded-full border-none bg-button-primary-bg px-4 py-2 text-xs font-semibold text-button-primary-fg"
                 onClick={() => setSearchQuery('')}
               >
                 Xóa tìm kiếm

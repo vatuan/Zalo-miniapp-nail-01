@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Text } from 'zmp-ui'
+import { Box, Button, Icon, Text } from 'zmp-ui'
 
 type PageHeaderProps = {
   title: string
@@ -16,10 +16,10 @@ export function PageHeader({ title, onBack, rightSlot }: PageHeaderProps) {
             variant="tertiary"
             type="neutral"
             size="small"
-            className="h-8 min-w-0 rounded-full border border-border-soft bg-surface-primary px-3 text-text-primary"
+            className="h-8 p-0 min-w-0 rounded-full border border-border-soft bg-surface-primary text-text-primary"
             onClick={onBack}
           >
-            Quay lại
+            <Icon icon="zi-chevron-left-header" size={20} />
           </Button>
         ) : null}
       </Box>
