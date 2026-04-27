@@ -3,6 +3,8 @@ export const ROUTE_PATHS = {
   notifications: '/notifications',
   appointmentDetailBase: '/appointments/:id',
   booking: '/booking',
+  bookingBranch: '/booking/branch',
+  bookingServices: '/booking/services',
   promotions: '/promotions',
   promotionDetailBase: '/promotions/:id',
   services: '/services',
