@@ -1,0 +1,20 @@
+:root {
+  --bottom-nav-height: 56px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f8fa;
+  color: #0d0d0d;
+  user-select: none;
+}
+
+.zaui-text {
+  font-weight: inherit;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
