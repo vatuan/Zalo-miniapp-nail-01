@@ -1,8 +1,13 @@
 export const ROUTE_PATHS = {
   home: '/',
-  services: '/dich-vu',
-  booking: '/dat-lich',
-  offers: '/uu-dai',
-  profile: '/ho-so',
+  notifications: '/notifications',
+  appointmentDetailBase: '/appointments/:id',
+  booking: '/booking',
+  promotions: '/promotions',
+  promotionDetailBase: '/promotions/:id',
+  services: '/services',
+  gallery: '/gallery',
+  profile: '/profile',
+  login: '/login',
   auth: '/auth',
 } as const

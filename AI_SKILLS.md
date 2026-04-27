@@ -51,3 +51,10 @@
 3. Place feature behavior in module layer.
 4. Keep root config/dependencies/tooling unchanged unless explicitly requested.
 5. Validate with build/lint after refactor.
+
+## Skill 9: Use React Icons (Mandatory)
+1. Use `react-icons` as the single icon source for app UI icons.
+2. Do not use emoji or ZMP `zi-*` icons for feature UI.
+3. Import icons explicitly from one `react-icons` pack per context (example: `react-icons/hi2`) to keep consistency.
+4. For icons coming from data/mocks, store `iconKey` in data and map `iconKey` to `react-icons` components in module/shared UI.
+5. During refactor/review, replace legacy emoji/ZMP icons with `react-icons`.

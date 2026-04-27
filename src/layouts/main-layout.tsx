@@ -1,19 +1,32 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
-import { AuthToggleButton } from '@/shared/components/auth-toggle-button'
 import { BottomNavigation } from '@/shared/components/bottom-navigation'
+
+import { PageLayoutProvider, usePageHeaderState } from './page-layout-context'
+
+function MainLayoutFrame() {
+  const headerConfig = usePageHeaderState()
+
+  return (
+    <div className="h-screen flex flex-col overflow-hidden">
+      <header className="shrink-0 pt-8 pb-4 border-b bg-white">{headerConfig?.content}</header>
+
+      <main className="flex-1 overflow-y-auto">
+        <Outlet />
+      </main>
+
+      <footer className="shrink-0 h-16 border-t bg-white flex items-center justify-center shadow-lg">
+        <BottomNavigation />
+      </footer>
+    </div>
+  )
+}
 
 export function MainLayout() {
   return (
-    <div className="min-h-screen bg-app-bg text-text-primary">
-      <main className="px-4 pb-[calc(var(--zaui-safe-area-inset-bottom,0px)+76px)] pt-[calc(var(--zaui-safe-area-inset-top,0px)+16px)]">
-        <div className="mb-4 flex justify-end">
-          <AuthToggleButton />
-        </div>
-        <Outlet />
-      </main>
-      <BottomNavigation />
-    </div>
+    <PageLayoutProvider>
+      <MainLayoutFrame />
+    </PageLayoutProvider>
   )
 }

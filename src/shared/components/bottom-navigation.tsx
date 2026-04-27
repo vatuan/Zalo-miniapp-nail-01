@@ -1,27 +1,58 @@
 import React from 'react'
+import {
+  HiCalendarDays,
+  HiGift,
+  HiHome,
+  HiOutlineCalendarDays,
+  HiOutlineGift,
+  HiOutlineHome,
+  HiOutlineSquares2X2,
+  HiOutlineUser,
+  HiSquares2X2,
+  HiUser,
+} from 'react-icons/hi2'
 import { NavLink } from 'react-router-dom'
 
-import { NAVIGATION_TABS } from '@/mocks/navigation-tabs'
+import { NAVIGATION_TABS, NavigationTabIconKey } from '@/mocks/navigation-tabs'
 import { clsx } from '@/utils/clsx'
+
+const ACTIVE_ICON_BY_KEY: Record<NavigationTabIconKey, React.ComponentType<{ size?: number }>> = {
+  home: HiHome,
+  booking: HiCalendarDays,
+  services: HiSquares2X2,
+  promotions: HiGift,
+  profile: HiUser,
+}
+
+const DEFAULT_ICON_BY_KEY: Record<NavigationTabIconKey, React.ComponentType<{ size?: number }>> = {
+  home: HiOutlineHome,
+  booking: HiOutlineCalendarDays,
+  services: HiOutlineSquares2X2,
+  promotions: HiOutlineGift,
+  profile: HiOutlineUser,
+}
 
 export function BottomNavigation() {
   return (
-    <nav className="fixed bottom-0 left-0 right-0 border-t border-nav-border bg-nav-surface px-2 pb-[calc(var(--zaui-safe-area-inset-bottom,0px)+8px)] pt-2">
-      <ul className="grid grid-cols-5 gap-1">
-        {NAVIGATION_TABS.map((tab) => (
-          <NavLink
-            to={tab.path}
-            className={({ isActive }) =>
-              clsx(
-                'flex min-h-12 items-center justify-center rounded-lg px-1 text-center text-xs font-medium',
-                isActive ? 'bg-nav-item-active-bg text-nav-text-active' : 'text-nav-text-default',
-              )
-            }
-          >
-            {tab.label}
-          </NavLink>
-        ))}
-      </ul>
+    <nav className="w-full grid grid-cols-5 gap-1 rounded-tl-md">
+      {NAVIGATION_TABS.map((tab) => (
+        <NavLink
+          key={tab.key}
+          to={tab.path}
+          className={({ isActive }) =>
+            clsx(
+              'flex flex-col items-center justify-center rounded-lg px-1 text-center transition-all',
+              isActive ? 'text-brand-pink' : 'text-text-primary',
+            )
+          }
+        >
+          {({ isActive }) => {
+            const IconComponent = isActive ? ACTIVE_ICON_BY_KEY[tab.iconKey] : DEFAULT_ICON_BY_KEY[tab.iconKey]
+
+            return <IconComponent size={25} />
+          }}
+        </NavLink>
+      ))}
     </nav>
   )
 }

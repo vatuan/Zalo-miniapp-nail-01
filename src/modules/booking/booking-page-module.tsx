@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { PagePlaceholder } from '@/shared/components/page-placeholder'
+import { ComingSoonPage } from '@/shared/components'
 
 export function BookingPageModule() {
-  return <PagePlaceholder text="Đặt lịch page" />
+  return <ComingSoonPage title="Đặt Lịch" />
 }

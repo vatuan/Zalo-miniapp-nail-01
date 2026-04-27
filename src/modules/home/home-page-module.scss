@@ -1,0 +1,18 @@
+.home-page-root {
+  background: var(--color-bg-app);
+  min-height: 100%;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.pull-refresh-indicator {
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+}

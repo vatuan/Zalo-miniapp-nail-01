@@ -77,3 +77,10 @@
 - Build route flow and module UI states first.
 - Validate UX with placeholders/mocks.
 - Integrate backend only after UI flow is stable.
+
+## 13) Icon System Rules (Mandatory)
+- All application icons must come from `react-icons`.
+- Do not use emoji as UI icons in modules/pages/layouts/shared components.
+- Do not use ZMP icon set (`<Icon icon="zi-...">`) for app feature UI icons.
+- When adding icons, import only specific icon components from a chosen `react-icons` pack (no wildcard imports).
+- If an icon is data-driven, store an `iconKey` in mocks/config and map `iconKey -> react-icons component` in UI layer.

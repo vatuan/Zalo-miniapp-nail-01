@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         brand: {
           pink: 'var(--color-brand-pink)',
+          dark: 'var(--color-brand-dark)',
           'pink-soft': 'var(--color-brand-pink-soft)',
           gold: 'var(--color-brand-gold)',
           cream: 'var(--color-brand-cream)',
@@ -44,6 +45,15 @@ module.exports = {
           'primary-fg': 'var(--color-button-primary-fg)',
           'secondary-bg': 'var(--color-button-secondary-bg)',
           'secondary-fg': 'var(--color-button-secondary-fg)',
+        },
+        status: {
+          danger: 'var(--color-status-danger)',
+          'danger-soft': 'var(--color-status-danger-soft)',
+          'warning-soft': 'var(--color-status-warning-soft)',
+          'success-soft': 'var(--color-status-success-soft)',
+        },
+        overlay: {
+          backdrop: 'var(--color-overlay-backdrop)',
         },
       },
       animation: {

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { PagePlaceholder } from '@/shared/components/page-placeholder'
+import { ComingSoonPage } from '@/shared/components'
 
 export function ProfilePageModule() {
-  return <PagePlaceholder text="Hồ sơ page" />
+  return <ComingSoonPage title="Hồ Sơ Của Tôi" />
 }
