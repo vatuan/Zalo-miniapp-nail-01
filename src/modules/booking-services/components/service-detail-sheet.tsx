@@ -75,27 +75,25 @@ export function ServiceDetailSheet({ service, isOpen, isSelected, onClose, onSel
         </Box>
 
         <Box className="grid grid-cols-2 gap-2 border-t border-border-soft bg-surface-primary p-4">
-          <Button
-            variant="tertiary"
-            type="neutral"
-            className="rounded-full border border-border-default bg-surface-primary text-text-primary"
+          <button
+            className="rounded-full text-sm border-none bg-surface-primary text-brand-dark font-semibold"
             onClick={onClose}
           >
             Đóng
-          </Button>
-          <Button
+          </button>
+          <button
             disabled={!service.isAvailable}
             onClick={handleAction}
             className={clsx(
-              'rounded-full font-semibold',
+              'rounded-full font-semibold py-2.5 border-none flex items-center justify-center gap-2 text-sm',
               isSelected
                 ? 'bg-brand-green text-text-inverse'
                 : 'bg-button-primary-bg text-button-primary-fg disabled:opacity-50',
             )}
-            prefixIcon={isSelected ? <HiCheck size={16} /> : undefined}
           >
+            {isSelected ? <HiCheck size={18} /> : undefined}
             {isSelected ? 'Đã chọn' : 'Thêm vào lịch'}
-          </Button>
+          </button>
         </Box>
       </Box>
     </Sheet>

@@ -145,13 +145,13 @@ export function BookingServicesPageModule() {
   }, [isLoading, mainContentRef])
 
   const handleTabChange = useCallback((categoryId: ServiceCategory) => {
-    setActiveCategory(categoryId)
     const node = sectionRefs.current[categoryId]
-    if (!node) {
-      return
-    }
+
     isProgrammaticScrollRef.current = true
-    node.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    setActiveCategory(categoryId)
+    if (node) {
+      node.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
     window.setTimeout(() => {
       isProgrammaticScrollRef.current = false
     }, 600)
@@ -160,7 +160,7 @@ export function BookingServicesPageModule() {
   const handleToggleService = useCallback(
     (service: Service) => {
       if (!service.isAvailable) {
-        openSnackbar({ text: 'Dịch vụ này tạm ngưng', type: 'warning', position: 'top' })
+        openSnackbar({ text: 'Dịch vụ này tạm ngưng', type: 'warning' })
         return
       }
 
@@ -184,7 +184,6 @@ export function BookingServicesPageModule() {
           openSnackbar({
             text: `Đã bỏ chọn combo ${combo.name}. Bạn vẫn có thể chọn dịch vụ lẻ.`,
             type: 'warning',
-            position: 'top',
           })
         })
       }
@@ -278,9 +277,6 @@ export function BookingServicesPageModule() {
         </Box>
       ) : !hasAnyServices ? (
         <Box className="flex flex-1 flex-col items-center justify-center gap-3 px-6 py-10 text-center">
-          <Box className="flex h-12 w-12 items-center justify-center rounded-full bg-surface-muted text-brand-dark">
-            <HiOutlineSparkles size={22} />
-          </Box>
           <Text className="text-sm text-text-primary">Chi nhánh chưa cập nhật dịch vụ</Text>
           <Text className="text-xs text-text-secondary">Vui lòng thử lại sau hoặc chọn chi nhánh khác.</Text>
           <Button
@@ -301,7 +297,7 @@ export function BookingServicesPageModule() {
             />
           </Box>
 
-          <Box className="flex flex-1 flex-col gap-6 px-4 pt-2">
+          <Box className="flex flex-1 flex-col gap-6 px-4 pt-2 pb-5">
             {availableCategories.map((category) => {
               const Icon = CATEGORY_ICON[category.iconKey]
               // Combo list
@@ -313,7 +309,7 @@ export function BookingServicesPageModule() {
                       sectionRefs.current[category.id] = node
                     }}
                     data-category={category.id}
-                    className="flex flex-col gap-2 scroll-mt-4"
+                    className="flex flex-col gap-2 scroll-mt-16"
                   >
                     <Box className="flex items-center gap-1.5">
                       <Icon size={14} className="text-brand-dark" />
@@ -350,7 +346,7 @@ export function BookingServicesPageModule() {
                     sectionRefs.current[category.id] = node
                   }}
                   data-category={category.id}
-                  className="flex flex-col gap-2 scroll-mt-4"
+                  className="flex flex-col gap-2 scroll-mt-16"
                 >
                   <Box className="flex items-center gap-1.5">
                     <Icon size={14} className="text-brand-dark" />
@@ -372,13 +368,10 @@ export function BookingServicesPageModule() {
                 </div>
               )
             })}
-
-            {/* Bottom spacer so last card isn't hidden under sticky bars */}
-            <Box className={clsx('w-full', showOvertimeBanner ? 'h-32' : 'h-20')} />
           </Box>
 
           {showOvertimeBanner ? (
-            <Box className="sticky bottom-[72px] left-0 right-0 z-10 mx-4 mb-2 flex items-center gap-2 rounded-xl border border-brand-gold bg-status-warning-soft px-3 py-2 shadow-sm">
+            <Box className="sticky bottom-[72px] left-0 right-0 z-10 mx-4 mb-2 flex items-center gap-2 rounded-xl border border-brand-gold bg-status-warning-soft px-3 py-2 shadow-xl">
               <HiOutlineExclamationTriangle size={18} className="shrink-0 text-brand-dark" />
               <Text className="flex-1 text-xs text-text-primary">
                 Tổng thời gian trên 4 tiếng. Bạn có muốn tách thành 2 lịch hẹn?
@@ -386,7 +379,7 @@ export function BookingServicesPageModule() {
               <button
                 type="button"
                 onClick={() => setOvertimeDismissed(true)}
-                className="shrink-0 rounded-full bg-brand-pink px-3 py-1 text-xs font-semibold text-text-inverse"
+                className="shrink-0 border-none rounded-full bg-brand-pink px-3 py-1 text-xs font-semibold text-text-inverse"
               >
                 Tôi hiểu
               </button>

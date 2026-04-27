@@ -8,6 +8,7 @@ module.exports = {
           pink: 'var(--color-brand-pink)',
           dark: 'var(--color-brand-dark)',
           'pink-soft': 'var(--color-brand-pink-soft)',
+          'pink-ultra-soft': 'var(--color-brand-pink-ultra-soft)',
           gold: 'var(--color-brand-gold)',
           cream: 'var(--color-brand-cream)',
           green: 'var(--color-brand-green)',
