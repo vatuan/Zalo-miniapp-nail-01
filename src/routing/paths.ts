@@ -16,6 +16,7 @@ export const ROUTE_PATHS = {
   services: '/services',
   serviceDetailBase: '/services/:id',
   serviceReviewsBase: '/services/:id/reviews',
+  reviews: '/reviews',
   gallery: '/gallery',
   nailDetailBase: '/gallery/:nailId',
   profile: '/profile',
