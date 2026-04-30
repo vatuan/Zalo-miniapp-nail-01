@@ -22,4 +22,5 @@ export const ROUTE_PATHS = {
   profile: '/profile',
   login: '/login',
   auth: '/auth',
+  reviewForm: '/review-form',
 } as const

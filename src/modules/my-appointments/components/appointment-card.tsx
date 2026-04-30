@@ -6,7 +6,6 @@ import { AppointmentRecord } from '@/mocks/appointment-data'
 import { clsx } from '@/utils/clsx'
 
 import { formatAppointmentDate } from '../utils/format-date'
-
 import { StatusBadge } from './status-badge'
 
 type AppointmentCardProps = {

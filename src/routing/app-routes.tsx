@@ -1,4 +1,3 @@
-// eslint-disable-next-line simple-import-sort/imports
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 
@@ -18,10 +17,11 @@ import LoginPage from '@/pages/login-page'
 import MyAppointmentsPage from '@/pages/my-appointment-page'
 import NailDetailPage from '@/pages/nail-detail-page'
 import NotificationsPage from '@/pages/notifications-page'
-import ReviewsPage from '@/pages/reviews-page'
 import ProfilePage from '@/pages/profile-page'
 import PromotionDetailPage from '@/pages/promotion-detail-page'
 import PromotionsPage from '@/pages/promotions-page'
+import ReviewFormPage from '@/pages/review-form-page'
+import ReviewsPage from '@/pages/reviews-page'
 import ServiceDetailPage from '@/pages/service-detail-page'
 import ServicesPage from '@/pages/services-page'
 import { ROUTE_PATHS } from '@/routing/paths'
@@ -48,6 +48,7 @@ export function AppRoutes() {
           <Route path={ROUTE_PATHS.services} element={<ServicesPage />} />
           <Route path={ROUTE_PATHS.serviceDetailBase} element={<ServiceDetailPage />} />
           <Route path={ROUTE_PATHS.reviews} element={<ReviewsPage />} />
+          <Route path={ROUTE_PATHS.reviewForm} element={<ReviewFormPage />} />
           <Route path={ROUTE_PATHS.gallery} element={<GalleryPage />} />
           <Route path={ROUTE_PATHS.nailDetailBase} element={<NailDetailPage />} />
           <Route path={ROUTE_PATHS.profile} element={<ProfilePage />} />

@@ -58,7 +58,7 @@ export function MyAppointmentsPageModule() {
   }
 
   const handleReview = (id: string) => {
-    openSnackbar({ text: `Mở form đánh giá cho lịch ${id}`, type: 'success' })
+    navigate(`${ROUTE_PATHS.reviewForm}?bookingId=${id}`)
   }
 
   return (

@@ -79,7 +79,7 @@ export function AppointmentDetailPageModule() {
   }
 
   const handleReview = () => {
-    openSnackbar({ text: `Mở form đánh giá cho lịch ${appointment.id}`, type: 'success' })
+    navigate(`${ROUTE_PATHS.reviewForm}?bookingId=${appointment.id}`)
   }
 
   const handleOpenDirections = () => {
