@@ -3,17 +3,24 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 
 import { AppShell } from '@/app/shell/app-shell'
 import { MainLayout } from '@/layouts/main-layout'
+import AppointmentCancelPage from '@/pages/appointment-cancel-page'
 import AppointmentDetailPage from '@/pages/appointment-detail-page'
 import BookingBranchPage from '@/pages/booking-branch-page'
+import BookingConfirmPage from '@/pages/booking-confirm-page'
+import BookingSelectDatePage from '@/pages/booking-select-date-page'
 import BookingServicesPage from '@/pages/booking-services-page'
+import BookingSuccessPage from '@/pages/booking-success-page'
 import BookingTechnicianPage from '@/pages/booking-technician-page'
 import GalleryPage from '@/pages/gallery-page'
 import HomePage from '@/pages/home-page'
 import LoginPage from '@/pages/login-page'
+import MyAppointmentsPage from '@/pages/my-appointment-page'
+import NailDetailPage from '@/pages/nail-detail-page'
 import NotificationsPage from '@/pages/notifications-page'
 import ProfilePage from '@/pages/profile-page'
 import PromotionDetailPage from '@/pages/promotion-detail-page'
 import PromotionsPage from '@/pages/promotions-page'
+import ServiceDetailPage from '@/pages/service-detail-page'
 import ServicesPage from '@/pages/services-page'
 import { ROUTE_PATHS } from '@/routing/paths'
 
@@ -25,14 +32,21 @@ export function AppRoutes() {
           <Route path={ROUTE_PATHS.home} element={<HomePage />} />
           <Route path={ROUTE_PATHS.notifications} element={<NotificationsPage />} />
           <Route path={ROUTE_PATHS.appointmentDetailBase} element={<AppointmentDetailPage />} />
+          <Route path={ROUTE_PATHS.appointmentCancelBase} element={<AppointmentCancelPage />} />
+          <Route path={ROUTE_PATHS.myAppointments} element={<MyAppointmentsPage />} />
           <Route path={ROUTE_PATHS.booking} element={<Navigate replace to={ROUTE_PATHS.bookingBranch} />} />
           <Route path={ROUTE_PATHS.bookingBranch} element={<BookingBranchPage />} />
           <Route path={ROUTE_PATHS.bookingServices} element={<BookingServicesPage />} />
           <Route path={ROUTE_PATHS.bookingTechnician} element={<BookingTechnicianPage />} />
+          <Route path={ROUTE_PATHS.bookingSelectDate} element={<BookingSelectDatePage />} />
+          <Route path={ROUTE_PATHS.bookingConfirm} element={<BookingConfirmPage />} />
+          <Route path={ROUTE_PATHS.bookingSuccess} element={<BookingSuccessPage />} />
           <Route path={ROUTE_PATHS.promotions} element={<PromotionsPage />} />
           <Route path={ROUTE_PATHS.promotionDetailBase} element={<PromotionDetailPage />} />
           <Route path={ROUTE_PATHS.services} element={<ServicesPage />} />
+          <Route path={ROUTE_PATHS.serviceDetailBase} element={<ServiceDetailPage />} />
           <Route path={ROUTE_PATHS.gallery} element={<GalleryPage />} />
+          <Route path={ROUTE_PATHS.nailDetailBase} element={<NailDetailPage />} />
           <Route path={ROUTE_PATHS.profile} element={<ProfilePage />} />
           <Route path={ROUTE_PATHS.login} element={<LoginPage />} />
           <Route path={ROUTE_PATHS.auth} element={<Navigate replace to={ROUTE_PATHS.login} />} />

@@ -1,9 +1,21 @@
-# CLAUDE.md
+## Project
 
-## Project Overview
+Zalo Mini App — UI only, no backend. All data mocked.
+Package manager: _npm_
 
-Zalo Mini App — UI-only, no real backend. All data is mocked.
-Stack: React 18,Reat Router Dom, TypeScript, Vite, TailwindCSS, Zustand, react-icons, zmp-sdk (Zalo SDK).
+## Stack
+
+- React 18, TypeScript, Vite, TailwindCSS v3
+- React Router Dom v6, Zustand, react-icons
+- zmp-sdk (Zalo SDK), zmp-ui (Zalo UI components)
+- dayjs, clsx, tailwind-merge, react-calendar
+
+## Commands
+
+- `npm dev` — dev server (port 3000)
+- `npm build` — production build
+- `npm lint` — ESLint
+- `npm fix` — ESLint autofix
 
 ---
 
@@ -11,68 +23,69 @@ Stack: React 18,Reat Router Dom, TypeScript, Vite, TailwindCSS, Zustand, react-i
 
 ```
 src/
-  app/shell/        # App shell wrapper (app-shell.tsx)
-  config/theme/     # colors.css, colors.ts — global design tokens
-  css/              # app.scss — global CSS variables/classes only
-  guards/           # private-route.tsx — wraps auth-required routes
-  layouts/          # main-layout.tsx, page-layout-context.tsx
-  mocks/            # ALL mock data lives here (branch, home, navigation, service)
-  modules/          # Feature modules imported into pages
-                    # (appointment-detail, auth, booking-branch,
-                    #  booking-services, booking-technician, gallery,
-                    #  home, login, notifications, offers, profile,
-                    #  promotions, services)
-  pages/            # Route-level components only — thin wrappers for modules
-  routing/          # app-routes.tsx, paths.ts
-  shared/components/# Reusable UI: bottom-navigation, page-header,
-                    # skeleton-loader, booking-progress-bar, etc.
-  stores/           # Zustand stores: auth-store.ts, booking-store.ts
-  utils/            # clsx.ts, format.ts, storage.ts, sleep.ts
+  app/shell/          # App shell wrapper (app-shell.tsx)
+  config/theme/       # colors.css, colors.ts — design tokens
+  css/                # app.scss — global CSS only
+  guards/             # private-route.tsx
+  layouts/            # main-layout.tsx, page-layout-context.tsx
+  mocks/              # ALL mock data (never inside components)
+  modules/            # Feature modules — own one feature end-to-end
+                      # (appointment-detail, auth, booking-branch,
+                      #  booking-services, booking-technician, gallery,
+                      #  home, login, notifications, offers, profile,
+                      #  promotions, services)
+  pages/              # Route entry points only, thin wrappers
+  routing/            # app-routes.tsx, paths.ts
+  shared/components/  # Reusable UI components
+  stores/             # Zustand stores: auth-store.ts, booking-store.ts
+  utils/              # clsx.ts, format.ts, storage.ts, sleep.ts
 ```
 
 ---
 
-## Architecture Rules
+## Architecture
 
-**Pages vs Modules**
+_Pages vs Modules_
 
-- `pages/` = route entry points only. No logic, no JSX beyond importing a module.
-- `modules/` = all feature logic and UI. Each module owns one feature end-to-end.
+- `pages/` = import module only. Zero logic, zero JSX beyond the import.
+- `modules/` = all feature logic, UI, hooks. Organized into multiple files — never one big file.
+- Module main file = composition layer only (imports + assembles children).
+- Split UI, business logic, hooks, and utilities into separate files when applicable.
 
-**Components**
+_Components_
 
 - Split into a new file when component exceeds ~100 lines.
 - Shared/reusable → `src/shared/components/`.
 - Feature-specific → inside its module folder.
 
-**State**
+_State_
 
 - Zustand stores in `src/stores/`. Do NOT create new store files unless asked.
 - Local UI state → `useState` inside component.
 
-**Mock Data**
+_Mock Data_
 
-- All mock data in `src/mocks/`. Never hardcode data inside components.
-- Import mocks directly; do not simulate fetch/async unless UI explicitly needs loading state.
+- Always in `src/mocks/`. Never hardcode data in components.
+- No async/fetch simulation unless UI explicitly needs a loading state.
 
 ---
 
-## Styling Rules
+## Styling
 
-- **Tailwind only** — no inline styles, no new CSS files unless adding a global variable.
-- Conditional classnames → use `clsx` imported from `@/utils/clsx`.
-- Dark mode → detect via `getSystemInfo` from `zmp-sdk`, not media query.
-- Mobile-first, max viewport width ~430px (Zalo Mini App constraint).
-- Color tokens defined in `src/config/theme/colors.ts` — use them, don't hardcode hex.
+- _Tailwind only_ — no inline styles, no new CSS files (except adding global variables).
+- Conditional classes → `clsx` imported from `@/utils/clsx`.
+- Colors → `src/config/theme/colors.ts`. Never hardcode hex values.
+- Dark mode → `getSystemInfo` from `zmp-sdk`. NOT CSS media query.
+- Mobile-first. Max viewport ~430px (Zalo Mini App constraint).
 
 ---
 
 ## Navigation
 
-- Use `react-router-dom` (`useNavigate`, `Link`) for all routing.
-- Route paths defined in `src/routing/paths.ts` — always import from there.
-- Never use `window.location` or `history` API directly.
-- Zalo back button → handled in layouts, do not re-implement.
+- `useNavigate`, `Link` from `react-router-dom` only.
+- Route paths → always import from `src/routing/paths.ts`.
+- NEVER use `window.location`, `history` API, or direct DOM manipulation.
+- Zalo back button → handled in layouts. Do not re-implement.
 
 ---
 
@@ -88,20 +101,18 @@ src/
 
 ---
 
-## Hard Constraints (Never Do)
+## HARD CONSTRAINTS
 
-- No real API calls, no fetch, no axios, no HTTP requests.
-- No new npm packages without explicit instruction.
-- No files outside `src/` except config files that already exist.
-- No changes to `vite.config.mts`, `tailwind.config.js`, `tsconfig.json` unless asked.
-- No `window.location`, `history.push`, or direct DOM manipulation.
-- UI text labels in **Vietnamese**. Code (variables, functions, types) in **English**.
+- NO real API calls, fetch, axios, or any HTTP requests.
+- NO new npm packages without explicit instruction.
+- NO files outside `src/` (except existing config files).
+- NO changes to `vite.config.mts`, `tailwind.config.js`, `tsconfig.json` unless asked.
+- NO `window.location`, `history.push`, or direct DOM manipulation.
+- UI text labels → **Vietnamese**. Code (variables, functions, types) → **English**.
 
 ---
 
-## File Creation Checklist
-
-Before creating any file, confirm:
+## Before Creating Any File
 
 1. Does a similar component already exist in `shared/components/`?
 2. Does mock data belong in `src/mocks/` (not inside the component)?
@@ -110,8 +121,8 @@ Before creating any file, confirm:
 
 ---
 
-## Response Format for Code Tasks
+## Response Format
 
-- Provide only the files that change. Skip unchanged files.
+- Provide ONLY the files that change. Skip unchanged files.
 - For edits: show the full updated file, not diffs.
-- No explanations unless asked. Code only.
+- Code only. No explanations unless asked.

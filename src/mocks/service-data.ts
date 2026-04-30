@@ -40,6 +40,49 @@ export const SERVICE_NOTES: string[] = [
   'Đến sớm 5–10 phút trước giờ hẹn để được phục vụ tốt nhất.',
 ]
 
+export const SALON_HOURS = {
+  openHour: 8,
+  closeHour: 20,
+  slotIntervalMin: 30,
+} as const
+
+export type DayPart = 'morning' | 'afternoon' | 'evening'
+
+export const DAY_PART_LABEL: Record<DayPart, string> = {
+  morning: 'Buổi sáng',
+  afternoon: 'Buổi chiều',
+  evening: 'Buổi tối',
+}
+
+export const SALON_HOLIDAYS: { dateIso: string; label: string }[] = [
+  { dateIso: '2026-05-01', label: 'Nghỉ lễ Quốc tế Lao động' },
+  { dateIso: '2026-09-02', label: 'Nghỉ lễ Quốc khánh' },
+]
+
+const BOOKED_SLOTS_BY_WEEKDAY: Record<number, string[]> = {
+  0: ['10:00', '14:00', '18:00'],
+  1: ['09:00', '11:00', '15:00'],
+  2: ['08:30', '13:30', '16:00'],
+  3: ['10:30', '14:30', '17:30'],
+  4: ['09:30', '13:00', '14:00', '17:00'],
+  5: ['08:00', '11:30', '14:00', '15:30', '18:00'],
+  6: ['09:00', '10:00', '13:00', '16:00', '19:00'],
+}
+
+export function getMockBookedSlots(dateIso: string): string[] {
+  const date = new Date(`${dateIso}T00:00:00`)
+  if (Number.isNaN(date.getTime())) return []
+  return BOOKED_SLOTS_BY_WEEKDAY[date.getDay()] ?? []
+}
+
+export function isHoliday(dateIso: string): boolean {
+  return SALON_HOLIDAYS.some((h) => h.dateIso === dateIso)
+}
+
+export function getHolidayLabel(dateIso: string): string | null {
+  return SALON_HOLIDAYS.find((h) => h.dateIso === dateIso)?.label ?? null
+}
+
 export const mockCategories: ServiceCategoryMeta[] = [
   { id: 'nail', label: 'Nail', iconKey: 'nail' },
   { id: 'pedicure', label: 'Pedicure', iconKey: 'pedicure' },
@@ -145,6 +188,18 @@ export const mockServices: Service[] = [
     durationMax: 60,
     price: 120000,
     imageUrl: 'https://placehold.co/64x64/c084fc/ffffff?text=Đá',
+    isPopular: false,
+    isAvailable: true,
+  },
+  {
+    id: 'svc-nail-art-cao-cap',
+    categoryId: 'nail_art',
+    name: 'Nail art cao cấp theo yêu cầu',
+    description: 'Thiết kế móng cao cấp 1-1 cùng nghệ nhân. Báo giá theo độ phức tạp của mẫu.',
+    durationMin: 90,
+    durationMax: 150,
+    price: 0,
+    imageUrl: 'https://placehold.co/64x64/c084fc/ffffff?text=Cao+cấp',
     isPopular: false,
     isAvailable: true,
   },

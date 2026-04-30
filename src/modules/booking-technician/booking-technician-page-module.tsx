@@ -17,6 +17,7 @@ import { useConfigurePageHeader } from '@/layouts/page-layout-context'
 import { Availability, mockTechnicians, Technician } from '@/mocks/technician-data'
 import { ROUTE_PATHS } from '@/routing/paths'
 import { BookingProgressBar, PageHeader, SkeletonLoader } from '@/shared/components'
+import { useBookingStore } from '@/stores/booking-store'
 import { clsx } from '@/utils/clsx'
 
 const ANY_TECH_ID = '__any__'
@@ -313,8 +314,11 @@ export function BookingTechnicianPageModule() {
   const navigate = useNavigate()
   const { openSnackbar } = useSnackbar()
 
+  const setSelectedTechnicianId = useBookingStore((state) => state.setSelectedTechnicianId)
+  const storedTechnicianId = useBookingStore((state) => state.selectedTechnicianId)
+
   const [isLoading, setIsLoading] = useState(true)
-  const [selectedId, setSelectedId] = useState<SelectedTech>('')
+  const [selectedId, setSelectedId] = useState<SelectedTech>(storedTechnicianId ?? '')
   const [profileTechId, setProfileTechId] = useState<string | null>(null)
 
   const headerConfig = useMemo(
@@ -369,8 +373,9 @@ export function BookingTechnicianPageModule() {
   const profileTechnician = profileTechId ? (mockTechnicians.find((t) => t.id === profileTechId) ?? null) : null
 
   const handleContinue = () => {
-    // eslint-disable-next-line no-console
-    console.log('Tiếp tục with selection:', selectedId)
+    if (!isCtaEnabled) return
+    setSelectedTechnicianId(selectedId)
+    navigate(ROUTE_PATHS.bookingSelectDate)
   }
 
   const hasTechnicians = allTechnicians.length > 0
