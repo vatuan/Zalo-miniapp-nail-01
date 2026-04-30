@@ -46,9 +46,7 @@ export function StickyActionBar({
       {showStrongWarning ? (
         <Box className="flex items-center gap-2 rounded-xl bg-status-error-soft px-3 py-2">
           <HiOutlineExclamationTriangle size={16} className="shrink-0 text-status-error" />
-          <Text className="text-xs text-status-error">
-            Lịch còn dưới 30 phút – không thể đổi lịch, hủy sẽ tính phí
-          </Text>
+          <Text className="text-xs text-status-error">Lịch còn dưới 30 phút – không thể đổi lịch, hủy sẽ tính phí</Text>
         </Box>
       ) : null}
 

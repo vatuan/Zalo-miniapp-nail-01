@@ -21,11 +21,7 @@ export type ServicesCatalog = {
 }
 
 function normalize(value: string): string {
-  return value
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .trim()
+  return value.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim()
 }
 
 function matchesQuery(haystack: string, needle: string): boolean {
@@ -70,7 +66,5 @@ export function useServicesCatalog(query: string): ServicesCatalog {
 }
 
 export function getComboChildServices(combo: Combo): Service[] {
-  return combo.serviceIds
-    .map((id) => mockServices.find((s) => s.id === id))
-    .filter((s): s is Service => Boolean(s))
+  return combo.serviceIds.map((id) => mockServices.find((s) => s.id === id)).filter((s): s is Service => Boolean(s))
 }

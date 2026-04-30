@@ -15,9 +15,7 @@ type PolicyStatusProps = {
 export function PolicyStatus({ policy }: PolicyStatusProps) {
   return (
     <Box className="flex flex-col gap-3 rounded-2xl border border-brand-pink-soft bg-card-surface p-4">
-      <Text className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">
-        Chính sách hủy
-      </Text>
+      <Text className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">Chính sách hủy</Text>
 
       <Box className="flex items-start gap-2">
         <HiCheckCircle size={16} className="mt-0.5 shrink-0 text-status-success" />
@@ -42,21 +40,11 @@ export function PolicyStatus({ policy }: PolicyStatusProps) {
       >
         <Box className="flex items-center gap-2">
           <HiClock size={16} className={policy.isFree ? 'text-status-success' : 'text-status-error'} />
-          <Text
-            className={clsx(
-              'text-xs font-semibold',
-              policy.isFree ? 'text-status-success' : 'text-status-error',
-            )}
-          >
+          <Text className={clsx('text-xs font-semibold', policy.isFree ? 'text-status-success' : 'text-status-error')}>
             Thời gian còn lại: {formatRemainingTime(policy.minutesRemaining)}
           </Text>
         </Box>
-        <Text
-          className={clsx(
-            'text-sm font-bold',
-            policy.isFree ? 'text-status-success' : 'text-status-error',
-          )}
-        >
+        <Text className={clsx('text-sm font-bold', policy.isFree ? 'text-status-success' : 'text-status-error')}>
           {policy.isPast
             ? 'Lịch đã qua giờ hẹn'
             : policy.isFree

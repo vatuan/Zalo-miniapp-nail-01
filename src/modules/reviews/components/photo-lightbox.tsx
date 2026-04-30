@@ -15,10 +15,7 @@ export function PhotoLightbox({ url, onClose }: PhotoLightboxProps) {
   }, [])
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
-      onClick={onClose}
-    >
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80" onClick={onClose}>
       <img
         src={url}
         alt="Ảnh đánh giá"

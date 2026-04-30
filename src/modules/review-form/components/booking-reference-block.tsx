@@ -20,9 +20,7 @@ export function BookingReferenceBlock({ bookingRef }: BookingReferenceBlockProps
       </Box>
       <Box className="flex items-center gap-2">
         <HiOutlineCalendarDays size={14} className="shrink-0 text-text-secondary" />
-        <Text className="text-[12px] text-text-secondary">
-          {formatTime(bookingRef.dateIso, 'DD/MM/YYYY')}
-        </Text>
+        <Text className="text-[12px] text-text-secondary">{formatTime(bookingRef.dateIso, 'DD/MM/YYYY')}</Text>
       </Box>
     </Box>
   )

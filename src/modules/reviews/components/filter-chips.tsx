@@ -23,10 +23,7 @@ type FilterChipsProps = {
 
 export function FilterChips({ selected, onChange }: FilterChipsProps) {
   return (
-    <div
-      className="flex gap-2 overflow-x-auto px-4 pb-1"
-      style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-    >
+    <div className="flex gap-2 overflow-x-auto px-4 pb-1" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
       {FILTER_OPTIONS.map((opt) => (
         <FilterChip
           key={opt.value}

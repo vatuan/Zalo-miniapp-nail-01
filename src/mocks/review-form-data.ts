@@ -2,14 +2,7 @@ import { getAppointmentById } from './appointment-data'
 
 // ─── Quick Tags ───────────────────────────────────────────────────────────────
 
-export const AVAILABLE_QUICK_TAGS: string[] = [
-  'Đúng mẫu',
-  'Tỉ mỉ',
-  'Sạch sẽ',
-  'Đúng giờ',
-  'Thân thiện',
-  'Giá hợp lý',
-]
+export const AVAILABLE_QUICK_TAGS: string[] = ['Đúng mẫu', 'Tỉ mỉ', 'Sạch sẽ', 'Đúng giờ', 'Thân thiện', 'Giá hợp lý']
 
 // ─── BookingRef ───────────────────────────────────────────────────────────────
 // Derived view of AppointmentRecord — only what the review form needs.
@@ -19,7 +12,7 @@ export const AVAILABLE_QUICK_TAGS: string[] = [
 
 export interface BookingRef {
   id: string
-  serviceName: string  // services[].name joined with " + "
+  serviceName: string // services[].name joined with " + "
   ktvName: string
   dateIso: string
   hasReviewed: boolean
@@ -46,9 +39,9 @@ export interface ReviewPayload {
   bookingId: string
   rating: 0 | 1 | 2 | 3 | 4 | 5
   tags: string[]
-  text: string          // max 500 chars
-  photos: string[]      // local paths from chooseImage; max 3
-  wantsFollowUp: boolean  // only meaningful when rating <= 2
+  text: string // max 500 chars
+  photos: string[] // local paths from chooseImage; max 3
+  wantsFollowUp: boolean // only meaningful when rating <= 2
 }
 
 export const INITIAL_REVIEW_PAYLOAD: ReviewPayload = {

@@ -2,11 +2,7 @@ import React from 'react'
 import { HiOutlineBellAlert } from 'react-icons/hi2'
 import { Box, Text } from 'zmp-ui'
 
-const REMINDER_ITEMS: string[] = [
-  'Xác nhận qua Zalo OA ngay',
-  'Nhắc trước 24 giờ',
-  'Nhắc trước 1 giờ',
-]
+const REMINDER_ITEMS: string[] = ['Xác nhận qua Zalo OA ngay', 'Nhắc trước 24 giờ', 'Nhắc trước 1 giờ']
 
 export function ReminderList() {
   return (

@@ -29,7 +29,9 @@ export function ServiceInfoRow({
       {!hasVariants ? (
         <Box className="flex items-center gap-2">
           <HiOutlineBanknotes size={18} className="shrink-0 text-text-secondary" />
-          <Text className={clsx('text-sm font-semibold', hasNoPrice ? 'italic text-text-secondary' : 'text-brand-dark')}>
+          <Text
+            className={clsx('text-sm font-semibold', hasNoPrice ? 'italic text-text-secondary' : 'text-brand-dark')}
+          >
             {formatPrice(price)}
           </Text>
         </Box>

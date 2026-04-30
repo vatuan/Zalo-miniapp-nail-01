@@ -32,10 +32,7 @@ export function SaveButton({ isSaved, onToggle }: SaveButtonProps) {
       className="relative flex h-10 w-10 items-center justify-center rounded-full border border-brand-pink-soft bg-surface-primary active:scale-95"
     >
       {isPulsing ? (
-        <span
-          aria-hidden
-          className="absolute inset-0 animate-ping rounded-full bg-brand-pink-soft opacity-60"
-        />
+        <span aria-hidden className="absolute inset-0 animate-ping rounded-full bg-brand-pink-soft opacity-60" />
       ) : null}
       {isSaved ? (
         <HiHeart size={20} className={clsx('relative text-brand-pink')} />

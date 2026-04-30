@@ -20,9 +20,7 @@ export function BookNowBar({ isAvailable, hasNoPrice, displayPrice, variantLabel
     <Box className="sticky -bottom-[0.5px] left-0 right-0 border-t border-border-soft bg-surface-primary px-4 py-3 shadow-[0_-2px_8px_rgba(0,0,0,0.08)]">
       <Box className="flex items-center gap-3">
         <Box className="flex min-w-0 flex-1 flex-col">
-          {variantLabel ? (
-            <Text className="line-clamp-1 text-[11px] text-text-secondary">{variantLabel}</Text>
-          ) : null}
+          {variantLabel ? <Text className="line-clamp-1 text-[11px] text-text-secondary">{variantLabel}</Text> : null}
           {hasNoPrice ? (
             <Text className="text-sm italic text-text-secondary">Liên hệ để biết giá</Text>
           ) : (

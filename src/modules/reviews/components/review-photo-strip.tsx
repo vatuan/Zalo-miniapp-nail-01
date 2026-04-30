@@ -14,10 +14,7 @@ export function ReviewPhotoStrip({ photos, isPhotoReported }: ReviewPhotoStripPr
 
   return (
     <>
-      <div
-        className="flex gap-2 overflow-x-auto"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-      >
+      <div className="flex gap-2 overflow-x-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
         {photos.map((url) => (
           <button
             key={url}

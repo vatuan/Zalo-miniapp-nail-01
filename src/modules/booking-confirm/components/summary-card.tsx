@@ -71,9 +71,7 @@ export function SummaryCard({
 
   return (
     <Box className="flex flex-col gap-2">
-      <Text className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">
-        Tóm tắt đặt lịch
-      </Text>
+      <Text className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">Tóm tắt đặt lịch</Text>
       <Box className="divide-y divide-border-soft rounded-2xl border border-brand-pink-soft bg-card-surface px-4">
         <SummaryRow
           icon={<HiOutlineMapPin size={18} />}

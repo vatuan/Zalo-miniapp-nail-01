@@ -22,11 +22,7 @@ export function GallerySearchBar({ isExpanded, query, onChange, onClose }: Galle
 
   return (
     <Box className="px-4 py-2">
-      <Box
-        className={clsx(
-          'flex items-center gap-2 rounded-full bg-surface-primary px-3 py-2 ring-1 ring-brand-pink',
-        )}
-      >
+      <Box className={clsx('flex items-center gap-2 rounded-full bg-surface-primary px-3 py-2 ring-1 ring-brand-pink')}>
         <HiMagnifyingGlass size={18} className="shrink-0 text-text-secondary" />
         <input
           ref={inputRef}

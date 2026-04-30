@@ -25,10 +25,7 @@ export function RelatedColorsGallery({ colors, onSeeAll }: RelatedColorsGalleryP
         </button>
       </Box>
 
-      <div
-        className="flex gap-3 overflow-x-auto pb-1 [&::-webkit-scrollbar]:hidden"
-        style={{ scrollbarWidth: 'none' }}
-      >
+      <div className="flex gap-3 overflow-x-auto pb-1 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none' }}>
         {colors.map((color) => (
           <Box key={color.id} className="flex w-[30%] min-w-[30%] shrink-0 flex-col gap-1">
             <Box

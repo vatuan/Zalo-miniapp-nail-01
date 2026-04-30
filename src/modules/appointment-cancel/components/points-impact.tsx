@@ -17,12 +17,8 @@ export function PointsImpact({ pendingPoints }: PointsImpactProps) {
         <Text className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">
           Tác động điểm thưởng
         </Text>
-        <Text className="text-sm font-semibold text-text-primary">
-          {pendingPoints} điểm pending sẽ mất
-        </Text>
-        <Text className="text-xs text-text-secondary">
-          Điểm chỉ được cộng khi bạn hoàn thành dịch vụ
-        </Text>
+        <Text className="text-sm font-semibold text-text-primary">{pendingPoints} điểm pending sẽ mất</Text>
+        <Text className="text-xs text-text-secondary">Điểm chỉ được cộng khi bạn hoàn thành dịch vụ</Text>
       </Box>
     </Box>
   )

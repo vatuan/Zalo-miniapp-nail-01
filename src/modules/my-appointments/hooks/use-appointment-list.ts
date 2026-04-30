@@ -23,10 +23,7 @@ export function useAppointmentList(activeTab: AppointmentTab): UseAppointmentLis
     setAppointments(mockAppointments)
   }, [])
 
-  const upcomingCount = useMemo(
-    () => appointments.filter((a) => isUpcomingStatus(a.status)).length,
-    [appointments],
-  )
+  const upcomingCount = useMemo(() => appointments.filter((a) => isUpcomingStatus(a.status)).length, [appointments])
 
   const list = useMemo(() => {
     if (activeTab === 'upcoming') return appointments.filter((a) => isUpcomingStatus(a.status))
@@ -36,9 +33,7 @@ export function useAppointmentList(activeTab: AppointmentTab): UseAppointmentLis
 
   const cancelById = (id: string) => {
     setAppointments((prev) =>
-      prev.map((appt) =>
-        appt.id === id ? { ...appt, status: 'cancelled', cancelReason: 'Khách hủy' } : appt,
-      ),
+      prev.map((appt) => (appt.id === id ? { ...appt, status: 'cancelled', cancelReason: 'Khách hủy' } : appt)),
     )
   }
 

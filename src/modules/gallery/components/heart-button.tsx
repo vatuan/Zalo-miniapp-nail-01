@@ -31,13 +31,13 @@ export function HeartButton({ isSaved, onClick }: HeartButtonProps) {
       className="absolute bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full border-none bg-surface-primary/85 text-text-primary shadow"
     >
       {isPulsing ? (
-        <span
-          aria-hidden
-          className="absolute inset-0 animate-ping rounded-full bg-brand-pink-soft opacity-60"
-        />
+        <span aria-hidden className="absolute inset-0 animate-ping rounded-full bg-brand-pink-soft opacity-60" />
       ) : null}
       {isSaved ? (
-        <HiHeart size={18} className={clsx('relative text-brand-pink', isPulsing && 'scale-110 transition-transform')} />
+        <HiHeart
+          size={18}
+          className={clsx('relative text-brand-pink', isPulsing && 'scale-110 transition-transform')}
+        />
       ) : (
         <HiOutlineHeart size={18} className="relative text-text-primary" />
       )}

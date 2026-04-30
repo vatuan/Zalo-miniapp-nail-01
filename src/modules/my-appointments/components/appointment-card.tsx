@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  HiOutlineMapPin,
-  HiOutlineSparkles,
-  HiOutlineStar,
-  HiOutlineUser,
-} from 'react-icons/hi2'
+import { HiOutlineMapPin, HiOutlineSparkles, HiOutlineStar, HiOutlineUser } from 'react-icons/hi2'
 import { Box, Text } from 'zmp-ui'
 
 import { AppointmentRecord } from '@/mocks/appointment-data'
@@ -22,13 +17,7 @@ type AppointmentCardProps = {
   onReview?: (id: string) => void
 }
 
-export function AppointmentCard({
-  appointment,
-  onOpenDetail,
-  onCancel,
-  onRebook,
-  onReview,
-}: AppointmentCardProps) {
+export function AppointmentCard({ appointment, onOpenDetail, onCancel, onRebook, onReview }: AppointmentCardProps) {
   const isUpcoming = appointment.status === 'confirmed' || appointment.status === 'pending'
   const isCompleted = appointment.status === 'completed'
   const isCancelledBySalon = appointment.status === 'cancelled_by_salon'

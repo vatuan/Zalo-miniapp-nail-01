@@ -108,9 +108,7 @@ export function FilterChipsRow({
         )}
       >
         <HiOutlineAdjustmentsHorizontal size={14} />
-        <Text className="text-xs font-semibold">
-          + Lọc{activeFilterCount > 0 ? ` (${activeFilterCount})` : ''}
-        </Text>
+        <Text className="text-xs font-semibold">+ Lọc{activeFilterCount > 0 ? ` (${activeFilterCount})` : ''}</Text>
       </button>
     </div>
   )

@@ -74,16 +74,9 @@ export function ReviewFormPageModule() {
         onChange={handleTextChange}
       />
 
-      <PhotoUploadSection
-        photos={photos}
-        maxPhotos={maxPhotos}
-        onAdd={handleAddPhoto}
-        onRemove={handleRemovePhoto}
-      />
+      <PhotoUploadSection photos={photos} maxPhotos={maxPhotos} onAdd={handleAddPhoto} onRemove={handleRemovePhoto} />
 
-      {showLowRatingFollowUp ? (
-        <FollowUpCheckbox checked={wantsFollowUp} onChange={setWantsFollowUp} />
-      ) : null}
+      {showLowRatingFollowUp ? <FollowUpCheckbox checked={wantsFollowUp} onChange={setWantsFollowUp} /> : null}
 
       <SubmitButton canSubmit={canSubmit} isSubmitting={isSubmitting} onSubmit={handleSubmit} />
     </Box>

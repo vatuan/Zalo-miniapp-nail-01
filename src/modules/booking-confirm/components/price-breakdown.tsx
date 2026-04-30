@@ -21,9 +21,7 @@ export function PriceBreakdown({
 }: PriceBreakdownProps) {
   return (
     <Box className="flex flex-col gap-2">
-      <Text className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">
-        Chi phí ước tính
-      </Text>
+      <Text className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">Chi phí ước tính</Text>
 
       <Box className="flex flex-col gap-2 rounded-2xl border border-brand-pink-soft bg-card-surface p-4">
         {services.map((service) => (

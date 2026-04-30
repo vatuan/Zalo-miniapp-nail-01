@@ -13,9 +13,7 @@ export function EmptySearchState({ query }: EmptySearchStateProps) {
         <HiOutlineMagnifyingGlassMinus size={28} className="text-brand-dark" />
       </Box>
       <Text className="text-sm font-semibold text-text-primary">Không tìm thấy dịch vụ</Text>
-      <Text className="text-xs text-text-secondary">
-        Không có kết quả phù hợp với “{query}”. Thử từ khóa khác nhé.
-      </Text>
+      <Text className="text-xs text-text-secondary">Không có kết quả phù hợp với “{query}”. Thử từ khóa khác nhé.</Text>
     </Box>
   )
 }

@@ -46,9 +46,7 @@ export function TabBar({ activeTab, upcomingCount, onChange }: TabBarProps) {
                 {upcomingCount}
               </Text>
             ) : null}
-            {isActive ? (
-              <Box className="absolute inset-x-3 -bottom-px h-0.5 rounded-full bg-brand-pink" />
-            ) : null}
+            {isActive ? <Box className="absolute inset-x-3 -bottom-px h-0.5 rounded-full bg-brand-pink" /> : null}
           </button>
         )
       })}

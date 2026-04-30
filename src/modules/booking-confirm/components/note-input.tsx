@@ -16,9 +16,7 @@ export function NoteInput({ value, onChange }: NoteInputProps) {
 
   return (
     <Box className="flex flex-col gap-2">
-      <Text className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">
-        Ghi chú cho salon
-      </Text>
+      <Text className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">Ghi chú cho salon</Text>
       <Box className="rounded-2xl border border-brand-pink-soft bg-card-surface p-3">
         <textarea
           value={value}

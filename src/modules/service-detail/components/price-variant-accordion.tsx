@@ -51,12 +51,7 @@ export function PriceVariantAccordion({ variants, selectedId, onSelect }: PriceV
                 )}
               >
                 <Box className="flex min-w-0 flex-1 flex-col">
-                  <Text
-                    className={clsx(
-                      'text-sm',
-                      isSelected ? 'font-semibold text-brand-dark' : 'text-text-primary',
-                    )}
-                  >
+                  <Text className={clsx('text-sm', isSelected ? 'font-semibold text-brand-dark' : 'text-text-primary')}>
                     {variant.label}
                   </Text>
                   <Text className="text-xs text-text-secondary">
@@ -64,10 +59,7 @@ export function PriceVariantAccordion({ variants, selectedId, onSelect }: PriceV
                   </Text>
                 </Box>
                 <Text
-                  className={clsx(
-                    'shrink-0 text-sm font-bold',
-                    isSelected ? 'text-brand-dark' : 'text-text-primary',
-                  )}
+                  className={clsx('shrink-0 text-sm font-bold', isSelected ? 'text-brand-dark' : 'text-text-primary')}
                 >
                   {formatPriceShort(variant.price)}
                 </Text>

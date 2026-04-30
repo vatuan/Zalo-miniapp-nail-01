@@ -59,9 +59,7 @@ export function ComboDetailSheet({ combo, childServices, isOpen, onClose, onBook
           </Box>
 
           <Box className="mt-4 border-t border-border-soft pt-3">
-            <Text className="text-xs font-semibold uppercase tracking-widest text-text-secondary">
-              Dịch vụ bao gồm
-            </Text>
+            <Text className="text-xs font-semibold uppercase tracking-widest text-text-secondary">Dịch vụ bao gồm</Text>
             <Box className="mt-1 flex flex-col gap-1">
               {childServices.map((service) => (
                 <Text key={service.id} className="text-sm text-text-primary">

@@ -1,19 +1,10 @@
 import React from 'react'
-import {
-  HiCheckCircle,
-  HiOutlineCheckCircle,
-  HiOutlineClock,
-  HiOutlineXCircle,
-  HiXCircle,
-} from 'react-icons/hi2'
+import { HiCheckCircle, HiOutlineCheckCircle, HiOutlineClock, HiOutlineXCircle, HiXCircle } from 'react-icons/hi2'
 import { Box, Text } from 'zmp-ui'
 
 import { AppointmentStatus } from '@/mocks/appointment-data'
 
-const STATUS_META: Record<
-  AppointmentStatus,
-  { label: string; bg: string; text: string; icon: React.ReactNode }
-> = {
+const STATUS_META: Record<AppointmentStatus, { label: string; bg: string; text: string; icon: React.ReactNode }> = {
   confirmed: {
     label: 'Đã xác nhận',
     bg: 'bg-status-success-soft',

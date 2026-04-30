@@ -13,9 +13,7 @@ type TextReviewSectionProps = {
 export function TextReviewSection({ value, charCount, maxLength, onChange }: TextReviewSectionProps) {
   return (
     <Box className="flex flex-col gap-3">
-      <Text className="text-[11px] font-bold uppercase tracking-wider text-text-secondary">
-        Nhận xét của bạn
-      </Text>
+      <Text className="text-[11px] font-bold uppercase tracking-wider text-text-secondary">Nhận xét của bạn</Text>
 
       <div className="relative">
         <textarea

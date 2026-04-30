@@ -46,8 +46,7 @@ export function BookingReferenceCard({ booking }: BookingReferenceCardProps) {
     }
   }
 
-  const serviceLabel =
-    booking.services.length === 0 ? '—' : booking.services.map((s) => s.name).join(' + ')
+  const serviceLabel = booking.services.length === 0 ? '—' : booking.services.map((s) => s.name).join(' + ')
 
   const timeLabel = booking.timeSlot
     ? `${formatBookingDate(booking.dateIso)} – ${booking.timeSlot}`

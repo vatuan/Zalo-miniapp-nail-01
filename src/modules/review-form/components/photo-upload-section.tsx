@@ -15,9 +15,7 @@ export function PhotoUploadSection({ photos, maxPhotos, onAdd, onRemove }: Photo
   return (
     <Box className="flex flex-col gap-3">
       <Box className="flex items-center justify-between">
-        <Text className="text-[11px] font-bold uppercase tracking-wider text-text-secondary">
-          Thêm ảnh kết quả
-        </Text>
+        <Text className="text-[11px] font-bold uppercase tracking-wider text-text-secondary">Thêm ảnh kết quả</Text>
         <Text className="text-[11px] text-text-secondary">
           {photos.length}/{maxPhotos}
         </Text>

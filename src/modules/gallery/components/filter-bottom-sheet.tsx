@@ -88,10 +88,7 @@ export function FilterBottomSheet({ isOpen, filters, onClose, onApply }: FilterB
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col justify-end bg-overlay-backdrop" onClick={onClose}>
-      <div
-        onClick={(e) => e.stopPropagation()}
-        className="flex max-h-[85vh] flex-col rounded-t-2xl bg-surface-primary"
-      >
+      <div onClick={(e) => e.stopPropagation()} className="flex max-h-[85vh] flex-col rounded-t-2xl bg-surface-primary">
         <Box className="flex items-center justify-between border-b border-border-soft px-4 py-3">
           <Text className="text-base font-semibold text-text-primary">Bộ lọc</Text>
           <button

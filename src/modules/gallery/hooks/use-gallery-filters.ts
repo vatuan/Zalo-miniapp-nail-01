@@ -1,13 +1,6 @@
 import { useCallback, useMemo, useState } from 'react'
 
-import {
-  mockNailSamples,
-  NailColor,
-  NailOccasion,
-  NailSample,
-  NailStyle,
-  NailTechnique,
-} from '@/mocks/gallery-data'
+import { mockNailSamples, NailColor, NailOccasion, NailSample, NailStyle, NailTechnique } from '@/mocks/gallery-data'
 
 export type GalleryFilters = {
   query: string
@@ -32,11 +25,7 @@ export function isFiltersEmpty(filters: GalleryFilters): boolean {
 }
 
 function normalize(value: string): string {
-  return value
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .trim()
+  return value.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim()
 }
 
 export function applyFilters(items: NailSample[], filters: GalleryFilters): NailSample[] {
