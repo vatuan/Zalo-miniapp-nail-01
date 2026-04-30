@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 
 import { NailSample } from '@/mocks/gallery-data'
 
+import { LoginPromptBanner } from '@/shared/components'
+
 import { HeartButton } from './heart-button'
-import { LoginPromptBanner } from './login-prompt-banner'
 
 type NailCardProps = {
   sample: NailSample

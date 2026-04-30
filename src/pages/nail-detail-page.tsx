@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { ComingSoonPage } from '@/shared/components'
+import { NailDetailPageModule } from '@/modules/nail-detail'
 
 export default function NailDetailPage() {
-  return <ComingSoonPage title="Chi tiết mẫu nail" />
+  return <NailDetailPageModule />
 }

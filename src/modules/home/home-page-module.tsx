@@ -194,7 +194,7 @@ export function HomePageModule() {
         <Text className="mb-4 text-sm text-text-secondary">Vui lòng kiểm tra mạng và thử lại.</Text>
         <Button
           className="rounded-full bg-button-primary-bg px-6 text-button-primary-fg"
-          prefixIcon={<HiOutlineArrowPath size={16} />}
+          prefixIcon={<HiOutlineArrowPath className="flex mt-0.5 mr-0.5 items-center" size={20} />}
           onClick={() => void handleRetry()}
         >
           Thử lại

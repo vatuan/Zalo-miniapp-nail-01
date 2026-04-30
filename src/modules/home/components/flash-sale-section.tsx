@@ -1,5 +1,5 @@
 import React from 'react'
-import { HiFire, HiOutlineArrowLongRight, HiOutlineClock } from 'react-icons/hi2'
+import { HiFire, HiOutlineClock } from 'react-icons/hi2'
 import { useNavigate } from 'react-router-dom'
 import { Box, Button, Text } from 'zmp-ui'
 
@@ -69,7 +69,6 @@ export function FlashSaleSection({ flashSales }: FlashSaleSectionProps) {
                   'w-full rounded-full',
                   isSoldOut ? 'bg-border-default text-text-secondary' : 'bg-button-primary-bg text-button-primary-fg',
                 )}
-                suffixIcon={!isSoldOut ? <HiOutlineArrowLongRight size={16} /> : undefined}
                 onClick={() => navigate(`${ROUTE_PATHS.booking}?service=${item.id}`)}
               >
                 Đặt ngay

@@ -32,7 +32,7 @@ export function FeaturedServices({ services }: FeaturedServicesProps) {
             <button
               key={service.id}
               onClick={() => navigate(`${ROUTE_PATHS.services}?category=${service.id}`)}
-              className="shrink-0 appearance-none border-none bg-pink-50 ring-1 ring-pink-400 rounded-full px-4 py-1.5 text-brand-pink"
+              className="shrink-0 appearance-none border-none bg-white ring-1 ring-pink-400 rounded-full px-4 py-1.5 text-brand-pink"
             >
               {service.label}
             </button>

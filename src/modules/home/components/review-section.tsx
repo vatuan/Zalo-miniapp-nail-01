@@ -21,7 +21,10 @@ const getInitials = (author: string) => {
 export function ReviewSection({ reviews }: ReviewSectionProps) {
   return (
     <Box>
-      <Text className="mb-2 text-sm font-bold tracking-wide text-text-primary">ĐÁNH GIÁ GẦN ĐÂY</Text>
+      <div className="flex items-center justify-between mb-2">
+        <Text className="text-sm font-bold tracking-wide text-text-primary">ĐÁNH GIÁ GẦN ĐÂY</Text>
+        <button className="border-none bg-transparent text-brand-dark">Xem tất cả</button>
+      </div>
 
       <Box className="space-y-2">
         {reviews.slice(0, 2).map((review) => (

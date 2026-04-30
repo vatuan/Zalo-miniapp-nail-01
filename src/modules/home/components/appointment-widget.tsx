@@ -78,7 +78,7 @@ export function AppointmentWidget({ appointment, onConfirmCancel }: AppointmentW
           <Box className="mt-4 grid grid-cols-2 gap-2">
             <Button
               size="small"
-              className="rounded-full border border-border-default bg-surface-primary text-text-primary"
+              className="rounded-full text-brand-dark border border-border-default bg-surface-primary"
               onClick={() => navigate(ROUTE_PATHS.appointmentDetailBase.replace(':id', appointment.id))}
             >
               Xem chi tiết
