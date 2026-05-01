@@ -1,31 +1,33 @@
-import React, { useMemo } from 'react'
-import {
-  HiCreditCard,
-  HiOutlineCalendarDays,
-  HiOutlineCreditCard,
-  HiOutlineGift,
-  HiOutlineHeart,
-  HiOutlineMapPin,
-  HiOutlineSparkles,
-  HiOutlineTicket,
-} from 'react-icons/hi2'
+import React, { useCallback, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Box } from 'zmp-ui'
+import { Box, useSnackbar } from 'zmp-ui'
 
 import { useConfigurePageHeader } from '@/layouts/page-layout-context'
-import { mockUser } from '@/mocks/home-data'
+import { userProfile } from '@/mocks/profile-data'
 import { ROUTE_PATHS } from '@/routing/paths'
 import { PageHeader } from '@/shared/components'
-import { useAuthStore } from '@/stores/auth-store'
 
-import { LoginPrompt } from './components/login-prompt'
-import { ProfileHeader } from './components/profile-header'
-import { ProfileMenu, ProfileMenuItem } from './components/profile-menu'
+import { FooterBlock } from './components/footer-block'
+import { SectionList, SectionListItem } from './components/section-list'
+import { ShortcutGrid } from './components/shortcut-grid'
+import { UserInfoBlock } from './components/user-info-block'
 
 export function ProfilePageModule() {
   const navigate = useNavigate()
-  // const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
-  const isAuthenticated = true
+  const { openSnackbar } = useSnackbar()
+
+  const handleContactOA = useCallback(() => {
+    try {
+      openSnackbar({ text: 'Đang mở Zalo OA của salon...', type: 'success' })
+    } catch {
+      // fallback: silent no-op
+    }
+  }, [openSnackbar])
+
+  const handleNavigateToBranhList = useCallback(() => {
+    navigate(ROUTE_PATHS.bookingBranch)
+  }, [navigate])
+
   const headerConfig = useMemo(
     () => ({
       content: (
@@ -39,57 +41,57 @@ export function ProfilePageModule() {
 
   useConfigurePageHeader(headerConfig)
 
-  const menuItems: ProfileMenuItem[] = useMemo(
+  const historyItems: SectionListItem[] = useMemo(
     () => [
       {
-        id: 'my-appointments',
-        icon: <HiOutlineCalendarDays size={18} />,
-        label: 'Lịch hẹn của tôi',
-        onClick: () => navigate(ROUTE_PATHS.myAppointments),
-      },
-      {
-        id: 'favorite-techs',
-        icon: <HiOutlineCreditCard size={18} />,
-        label: 'Thẻ thành viên',
-        onClick: () => navigate(ROUTE_PATHS.loyalty),
-      },
-      {
-        id: 'vouchers',
-        icon: <HiOutlineTicket size={18} />,
-        label: 'Voucher của tôi',
-        onClick: () => navigate(ROUTE_PATHS.promotions),
-      },
-      {
-        id: 'rewards',
-        icon: <HiOutlineGift size={18} />,
-        label: 'Đổi điểm thưởng',
-        onClick: () => navigate(ROUTE_PATHS.profile),
-      },
-      {
-        id: 'branches',
-        icon: <HiOutlineMapPin size={18} />,
-        label: 'Chi nhánh gần tôi',
-        onClick: () => navigate(ROUTE_PATHS.bookingBranch),
-      },
-      {
-        id: 'gallery',
-        icon: <HiOutlineSparkles size={18} />,
-        label: 'Mẫu nail nổi bật',
+        id: 'favorite-nails',
+        label: `Mẫu yêu thích (${userProfile.savedNailCount})`,
         onClick: () => navigate(ROUTE_PATHS.gallery),
       },
     ],
     [navigate],
   )
 
+  const settingsItems: SectionListItem[] = useMemo(
+    () => [
+      {
+        id: 'notifications',
+        label: 'Cài đặt thông báo',
+        disabled: false,
+      },
+    ],
+    [],
+  )
+
+  const supportItems: SectionListItem[] = useMemo(
+    () => [
+      {
+        id: 'faq',
+        label: 'Danh sách chi nhánh',
+        onClick: handleNavigateToBranhList,
+      },
+      {
+        id: 'faq',
+        label: 'Câu hỏi thường gặp',
+        disabled: false,
+      },
+      {
+        id: 'contact-oa',
+        label: 'Liên hệ qua Zalo OA',
+        onClick: handleContactOA,
+      },
+    ],
+    [handleContactOA, handleNavigateToBranhList],
+  )
+
   return (
     <Box className="flex min-h-full flex-col gap-4 bg-app-bg px-4 pt-4 pb-8">
-      {isAuthenticated ? (
-        <ProfileHeader user={mockUser} />
-      ) : (
-        <LoginPrompt onLogin={() => navigate(ROUTE_PATHS.login)} />
-      )}
-
-      <ProfileMenu items={menuItems} />
+      <UserInfoBlock />
+      <ShortcutGrid />
+      <SectionList title="Lịch sử & cá nhân" items={historyItems} />
+      <SectionList title="Cài đặt" items={settingsItems} />
+      <SectionList title="Hỗ trợ" items={supportItems} />
+      <FooterBlock />
     </Box>
   )
 }
