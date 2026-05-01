@@ -24,4 +24,6 @@ export const ROUTE_PATHS = {
   auth: '/auth',
   reviewForm: '/review-form',
   loyalty: '/loyalty',
+  branchList: '/branches',
+  faq: '/faq',
 } as const

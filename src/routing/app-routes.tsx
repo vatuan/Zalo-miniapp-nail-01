@@ -11,6 +11,8 @@ import BookingSelectDatePage from '@/pages/booking-select-date-page'
 import BookingServicesPage from '@/pages/booking-services-page'
 import BookingSuccessPage from '@/pages/booking-success-page'
 import BookingTechnicianPage from '@/pages/booking-technician-page'
+import BranchListPage from '@/pages/branch-list-page'
+import FaqPage from '@/pages/faq-page'
 import GalleryPage from '@/pages/gallery-page'
 import HomePage from '@/pages/home-page'
 import LoginPage from '@/pages/login-page'
@@ -54,6 +56,8 @@ export function AppRoutes() {
           <Route path={ROUTE_PATHS.nailDetailBase} element={<NailDetailPage />} />
           <Route path={ROUTE_PATHS.profile} element={<ProfilePage />} />
           <Route path={ROUTE_PATHS.loyalty} element={<LoyaltyPage />} />
+          <Route path={ROUTE_PATHS.branchList} element={<BranchListPage />} />
+          <Route path={ROUTE_PATHS.faq} element={<FaqPage />} />
           <Route path={ROUTE_PATHS.login} element={<LoginPage />} />
           <Route path={ROUTE_PATHS.auth} element={<Navigate replace to={ROUTE_PATHS.login} />} />
         </Route>

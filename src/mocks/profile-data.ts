@@ -68,7 +68,7 @@ export const shortcuts: ProfileShortcut[] = [
   },
   {
     id: 'vouchers',
-    label: 'Ưu đãi & voucher',
+    label: 'Ưu đãi & Voucher',
     icon: '🎟',
     path: ROUTE_PATHS.promotions,
   },

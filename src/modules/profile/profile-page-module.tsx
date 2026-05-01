@@ -24,8 +24,8 @@ export function ProfilePageModule() {
     }
   }, [openSnackbar])
 
-  const handleNavigateToBranhList = useCallback(() => {
-    navigate(ROUTE_PATHS.bookingBranch)
+  const handleNavigateToBranchList = useCallback(() => {
+    navigate(ROUTE_PATHS.branchList)
   }, [navigate])
 
   const headerConfig = useMemo(
@@ -66,14 +66,14 @@ export function ProfilePageModule() {
   const supportItems: SectionListItem[] = useMemo(
     () => [
       {
-        id: 'faq',
+        id: 'branch-list',
         label: 'Danh sách chi nhánh',
-        onClick: handleNavigateToBranhList,
+        onClick: handleNavigateToBranchList,
       },
       {
         id: 'faq',
         label: 'Câu hỏi thường gặp',
-        disabled: false,
+        onClick: () => navigate(ROUTE_PATHS.faq),
       },
       {
         id: 'contact-oa',
@@ -81,7 +81,7 @@ export function ProfilePageModule() {
         onClick: handleContactOA,
       },
     ],
-    [handleContactOA, handleNavigateToBranhList],
+    [handleContactOA, handleNavigateToBranchList, navigate],
   )
 
   return (
