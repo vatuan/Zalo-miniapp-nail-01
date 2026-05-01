@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react'
-import { HiOutlineArrowLongRight, HiOutlineGift, HiOutlineUserCircle } from 'react-icons/hi2'
+import { HiOutlineArrowLongRight, HiOutlineUserCircle } from 'react-icons/hi2'
+import { RiCopperCoinFill } from 'react-icons/ri'
 import { useNavigate } from 'react-router-dom'
 import { Box, Button, Text } from 'zmp-ui'
 
@@ -63,8 +64,8 @@ export function GreetingBar({ user }: GreetingBarProps) {
           {user.membership}
         </Text>
 
-        <Box className="flex items-center gap-1 text-text-secondary">
-          <HiOutlineGift size={16} />
+        <Box className="flex items-center gap-1 text-text-primary">
+          <RiCopperCoinFill size={16} />
           <Text className="text-sm font-medium">{`${user.points} điểm`}</Text>
         </Box>
       </Box>

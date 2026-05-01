@@ -222,7 +222,7 @@ export function HomePageModule() {
         </Box>
       </Box>
 
-      <Box className="space-y-4 pb-4">
+      <Box className="space-y-6 pb-4">
         {isFirstLoading ? (
           <>
             <SkeletonLoader className="h-24 rounded-xl" />

@@ -16,7 +16,7 @@ export function FlashSaleSection({ flashSales }: FlashSaleSectionProps) {
 
   return (
     <Box>
-      <Box className="mb-2 flex items-center gap-2">
+      <Box className="mb-2 flex items-center gap-1">
         <HiFire className="text-brand-dark" size={18} />
         <Text className="text-sm font-bold tracking-wide text-text-primary">FLASH SALE HÔM NAY</Text>
       </Box>

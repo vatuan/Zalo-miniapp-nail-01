@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Text } from 'zmp-ui'
 
 import { PromotionBanner } from '@/mocks/home-data'
+import { ROUTE_PATHS } from '@/routing/paths'
 import { clsx } from '@/utils/clsx'
 
 type PromotionCarouselProps = {
@@ -54,10 +55,10 @@ export function PromotionCarousel({ banners }: PromotionCarouselProps) {
               key={banner.id}
               type="button"
               className="relative border-none w-full shrink-0 border-0 bg-transparent p-0"
-              onClick={() => navigate(banner.link)}
+              onClick={() => navigate(ROUTE_PATHS.promotions)}
               aria-label={banner.title}
             >
-              <img src={banner.imageUrl} alt={banner.title} className="aspect-[16/6] w-full h-full object-cover" />
+              <img src={banner.bannerUrl} alt={banner.title} className="aspect-[16/6] w-full h-full object-cover" />
 
               <div className="absolute inset-x-0 bottom-0 bg-overlay-backdrop px-3 py-2 text-left">
                 <Text className="text-sm font-semibold text-text-inverse">{banner.title}</Text>

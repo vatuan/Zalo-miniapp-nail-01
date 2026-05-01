@@ -1,7 +1,7 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo } from 'react'
 import { HiOutlineCalendarDays, HiOutlineClock, HiOutlineMapPin } from 'react-icons/hi2'
 import { useNavigate } from 'react-router-dom'
-import { Box, Button, Sheet, Text } from 'zmp-ui'
+import { Box, Button, Text } from 'zmp-ui'
 
 import { UpcomingAppointment } from '@/mocks/home-data'
 import { ROUTE_PATHS } from '@/routing/paths'
@@ -12,9 +12,8 @@ type AppointmentWidgetProps = {
   onConfirmCancel: () => void
 }
 
-export function AppointmentWidget({ appointment, onConfirmCancel }: AppointmentWidgetProps) {
+export function AppointmentWidget({ appointment }: AppointmentWidgetProps) {
   const navigate = useNavigate()
-  const [isCancelSheetVisible, setIsCancelSheetVisible] = useState(false)
 
   const isToday = appointment.status === 'today'
   const isCancelledBySalon = appointment.status === 'cancelled_by_salon'
@@ -36,7 +35,10 @@ export function AppointmentWidget({ appointment, onConfirmCancel }: AppointmentW
           </Box>
 
           {appointment.totalOtherAppointments > 0 && !isCancelledBySalon ? (
-            <Text className="text-xs font-semibold text-brand-dark">
+            <Text
+              onClick={() => navigate(ROUTE_PATHS.myAppointments)}
+              className="text-xs font-semibold text-brand-dark"
+            >
               {`+${appointment.totalOtherAppointments} lịch khác`}
             </Text>
           ) : null}
@@ -86,44 +88,13 @@ export function AppointmentWidget({ appointment, onConfirmCancel }: AppointmentW
             <Button
               size="small"
               className="rounded-full bg-button-primary-bg text-button-primary-fg"
-              onClick={() => setIsCancelSheetVisible(true)}
+              onClick={() => navigate(ROUTE_PATHS.appointmentCancelBase.replace(':id', appointment.id))}
             >
               Hủy
             </Button>
           </Box>
         )}
       </Box>
-
-      <Sheet
-        visible={isCancelSheetVisible}
-        title="Xác nhận hủy lịch"
-        onClose={() => setIsCancelSheetVisible(false)}
-        autoHeight
-      >
-        <Box className="space-y-3 p-4">
-          <Text className="text-sm text-text-primary">Bạn có chắc muốn hủy lịch hẹn này không?</Text>
-          <Box className="grid grid-cols-2 gap-2">
-            <Button
-              variant="tertiary"
-              type="neutral"
-              className="rounded-full border border-border-default bg-surface-primary text-text-primary"
-              onClick={() => setIsCancelSheetVisible(false)}
-            >
-              Không
-            </Button>
-            <Button
-              type="danger"
-              className="rounded-full bg-status-danger text-button-primary-fg"
-              onClick={() => {
-                onConfirmCancel()
-                setIsCancelSheetVisible(false)
-              }}
-            >
-              Hủy lịch
-            </Button>
-          </Box>
-        </Box>
-      </Sheet>
     </>
   )
 }

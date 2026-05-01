@@ -18,10 +18,11 @@ export type UpcomingAppointment = {
 } | null
 
 export type PromotionBanner = {
-  id: number
+  id: string | number
   title: string
   imageUrl: string
   link: string
+  bannerUrl: string
 }
 
 export type FeaturedService = {
@@ -54,7 +55,7 @@ export type ReviewItem = {
 }
 
 export const mockUser: UserProfile = {
-  name: 'Nguyễn Thị Linh',
+  name: 'Nguyễn Mỹ Linh',
   isLoggedIn: true,
   membership: 'Silver',
   points: 450,
@@ -72,22 +73,25 @@ export const mockUpcomingAppointment: UpcomingAppointment = {
 
 export const mockBanners: PromotionBanner[] = [
   {
-    id: 1,
     title: 'Giảm 30% Sơn Gel T2-T4',
     imageUrl: 'https://placehold.co/375x160/f9a8d4/ffffff?text=Giảm+30%25+Sơn+Gel',
     link: '/promotions/1',
+    id: 'promo-gel-30',
+    bannerUrl: 'https://picsum.photos/seed/promo-gel-30/430/200',
   },
   {
-    id: 2,
+    id: 'promo-birthday',
     title: 'Combo Sinh Nhật Đặc Biệt',
     imageUrl: 'https://placehold.co/375x160/c084fc/ffffff?text=Combo+Sinh+Nhật',
     link: '/promotions/2',
+    bannerUrl: 'https://picsum.photos/seed/promo-birthday/430/200',
   },
   {
-    id: 3,
+    id: 'promo-weekend',
     title: 'Pedicure Thư Giãn Cuối Tuần',
-    imageUrl: 'https://placehold.co/375x160/86efac/ffffff?text=Pedicure+Cuối+Tuần',
+    imageUrl: 'https://picsum.photos/seed/promo-pedi-weekend/430/200',
     link: '/promotions/3',
+    bannerUrl: 'https://picsum.photos/430/200',
   },
 ]
 
@@ -107,19 +111,17 @@ export const mockFlashSales: FlashSaleItem[] = [
 export const mockGallery: GalleryItem[] = [
   {
     id: 1,
-    imageUrl:
-      'https://res.cloudinary.com/dbcwtjvf3/image/upload/c_thumb,w_200,g_face/v1777273769/Mau_nail_01_avy8kb.png',
+    imageUrl: 'https://picsum.photos/id/17/200',
     alt: 'Mẫu nail 1',
   },
   {
     id: 2,
-    imageUrl:
-      'https://res.cloudinary.com/dbcwtjvf3/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1777273969/Ma%CC%82%CC%83u_nail_03_mcmval.png',
+    imageUrl: 'https://picsum.photos/id/10/200',
     alt: 'Mẫu nail 2',
   },
   {
     id: 3,
-    imageUrl: 'https://res.cloudinary.com/dbcwtjvf3/image/upload/v1777273967/Ma%CC%82%CC%83u_nail_02_tl3t3y.png',
+    imageUrl: 'https://picsum.photos/id/23/200',
     alt: 'Mẫu nail 3',
   },
 ]

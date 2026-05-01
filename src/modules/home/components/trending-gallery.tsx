@@ -1,5 +1,5 @@
 import React from 'react'
-import { HiOutlineArrowLongRight } from 'react-icons/hi2'
+import { HiChevronRight } from 'react-icons/hi2'
 import { useNavigate } from 'react-router-dom'
 import { Box, Text } from 'zmp-ui'
 
@@ -23,6 +23,7 @@ export function TrendingGallery({ gallery }: TrendingGalleryProps) {
           onClick={() => navigate(ROUTE_PATHS.gallery)}
         >
           <span>Xem tất cả</span>
+          <HiChevronRight size={14} />
         </button>
       </Box>
 

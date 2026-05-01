@@ -1,5 +1,5 @@
 import React from 'react'
-import { HiStar } from 'react-icons/hi2'
+import { HiChevronRight, HiStar } from 'react-icons/hi2'
 import { Box, Text, useNavigate } from 'zmp-ui'
 
 import { ReviewItem } from '@/mocks/home-data'
@@ -25,8 +25,11 @@ export function ReviewSection({ reviews }: ReviewSectionProps) {
     <Box>
       <div className="flex items-center justify-between mb-2">
         <Text className="text-sm font-bold tracking-wide text-text-primary">ĐÁNH GIÁ GẦN ĐÂY</Text>
-        <button className="border-none bg-transparent text-brand-dark" onClick={() => navigate(ROUTE_PATHS.reviews)}>
-          Xem tất cả
+        <button
+          className="border-none bg-transparent text-sm text-brand-dark flex items-center gap-1 p-0"
+          onClick={() => navigate(ROUTE_PATHS.reviews)}
+        >
+          Xem tất cả <HiChevronRight size={14} />
         </button>
       </div>
 

@@ -1,6 +1,7 @@
 import React from 'react'
+import { HiChevronRight } from 'react-icons/hi2'
 import { useNavigate } from 'react-router-dom'
-import { Button, Text } from 'zmp-ui'
+import { Text } from 'zmp-ui'
 
 import { FeaturedService } from '@/mocks/home-data'
 import { ROUTE_PATHS } from '@/routing/paths'
@@ -19,10 +20,10 @@ export function FeaturedServices({ services }: FeaturedServicesProps) {
           DỊCH VỤ NỔI BẬT
         </Text>
         <button
-          className="text-sm border-none bg-transparent text-brand-dark p-0 h-max"
+          className="text-sm border-none bg-transparent text-brand-dark p-0 h-max flex items-center gap-1"
           onClick={() => navigate(ROUTE_PATHS.services)}
         >
-          Xem tất cả
+          Xem tất cả <HiChevronRight size={14} />
         </button>
       </div>
 

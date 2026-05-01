@@ -45,7 +45,7 @@ export interface PointHistoryEntry {
 // ─── Member ───────────────────────────────────────────────────────────────────
 
 export const memberProfile: MemberProfile = {
-  name: 'Nguyễn Thị Linh',
+  name: 'Nguyễn Mỹ Linh',
   tier: 'silver',
   points: 450,
   memberSince: '01/2024',

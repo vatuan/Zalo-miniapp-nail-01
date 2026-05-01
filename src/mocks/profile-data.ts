@@ -24,7 +24,7 @@ export interface ProfileShortcut {
 // ─── Default profile ──────────────────────────────────────────────────────────
 
 export const userProfile: ProfileUser = {
-  name: 'Nguyễn Thị Linh',
+  name: 'Nguyễn Mỹ Linh',
   phone: '0901 234 567',
   avatarUrl: 'https://i.pravatar.cc/128?img=47',
   tier: 'silver',
@@ -36,7 +36,7 @@ export const userProfile: ProfileUser = {
 // ─── Edge case profile (missing phone + avatar) ───────────────────────────────
 
 export const profileEdgeCases: ProfileUser = {
-  name: 'Nguyễn Thị Linh',
+  name: 'Nguyễn Mỹ Linh',
   phone: null,
   avatarUrl: null,
   tier: 'silver',
