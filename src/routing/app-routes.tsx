@@ -14,6 +14,7 @@ import BookingTechnicianPage from '@/pages/booking-technician-page'
 import GalleryPage from '@/pages/gallery-page'
 import HomePage from '@/pages/home-page'
 import LoginPage from '@/pages/login-page'
+import LoyaltyPage from '@/pages/loyalty-page'
 import MyAppointmentsPage from '@/pages/my-appointment-page'
 import NailDetailPage from '@/pages/nail-detail-page'
 import NotificationsPage from '@/pages/notifications-page'
@@ -52,6 +53,7 @@ export function AppRoutes() {
           <Route path={ROUTE_PATHS.gallery} element={<GalleryPage />} />
           <Route path={ROUTE_PATHS.nailDetailBase} element={<NailDetailPage />} />
           <Route path={ROUTE_PATHS.profile} element={<ProfilePage />} />
+          <Route path={ROUTE_PATHS.loyalty} element={<LoyaltyPage />} />
           <Route path={ROUTE_PATHS.login} element={<LoginPage />} />
           <Route path={ROUTE_PATHS.auth} element={<Navigate replace to={ROUTE_PATHS.login} />} />
         </Route>

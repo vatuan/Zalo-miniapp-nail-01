@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react'
 import {
+  HiCreditCard,
   HiOutlineCalendarDays,
+  HiOutlineCreditCard,
   HiOutlineGift,
   HiOutlineHeart,
   HiOutlineMapPin,
@@ -47,9 +49,9 @@ export function ProfilePageModule() {
       },
       {
         id: 'favorite-techs',
-        icon: <HiOutlineHeart size={18} />,
-        label: 'KTV yêu thích',
-        onClick: () => navigate(ROUTE_PATHS.profile),
+        icon: <HiOutlineCreditCard size={18} />,
+        label: 'Thẻ thành viên',
+        onClick: () => navigate(ROUTE_PATHS.loyalty),
       },
       {
         id: 'vouchers',

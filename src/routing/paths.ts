@@ -23,4 +23,5 @@ export const ROUTE_PATHS = {
   login: '/login',
   auth: '/auth',
   reviewForm: '/review-form',
+  loyalty: '/loyalty',
 } as const
