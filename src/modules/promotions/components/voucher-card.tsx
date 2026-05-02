@@ -64,7 +64,7 @@ export function VoucherCard({ voucher }: VoucherCardProps) {
           <button
             type="button"
             onClick={handleUseNow}
-            className="mt-0.5 w-full rounded-full border border-brand-pink bg-transparent py-2 text-[13px] font-semibold text-brand-pink active:bg-brand-pink-ultra-soft"
+            className="mt-0.5 w-full rounded-full border-none ring-1 ring-brand-pink bg-transparent py-3 text-[13px] font-semibold text-brand-pink active:bg-brand-pink-ultra-soft"
           >
             Dùng ngay
           </button>

@@ -25,8 +25,8 @@ export function ReasonSelector({
 }: ReasonSelectorProps) {
   return (
     <Box className="flex flex-col gap-2">
-      <Text className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">
-        Lý do hủy lịch <Text className="text-status-error">*</Text>
+      <Text className="text-xs flex gap-1 font-semibold uppercase tracking-widest text-text-secondary">
+        Lý do hủy lịch <Text className="text-red-500">*</Text>
       </Text>
       <Box className="flex flex-col divide-y divide-border-soft rounded-2xl border border-brand-pink-soft bg-card-surface">
         {reasons.map((reason) => {
@@ -40,8 +40,8 @@ export function ReasonSelector({
             >
               <Box
                 className={clsx(
-                  'flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-colors',
-                  isSelected ? 'border-brand-pink' : 'border-border-default',
+                  'flex h-5 w-5 shrink-0 items-center justify-center rounded-full ring-1 transition-colors',
+                  isSelected ? 'ring-brand-pink' : 'ring-brand-pink-soft',
                 )}
               >
                 {isSelected ? <Box className="h-2.5 w-2.5 rounded-full bg-brand-pink" /> : null}

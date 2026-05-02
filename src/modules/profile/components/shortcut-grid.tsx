@@ -13,14 +13,19 @@ export function ShortcutGrid() {
     <Box className="flex flex-col gap-2">
       <Text className="text-[13px] font-semibold uppercase tracking-wide text-text-secondary">Shortcuts</Text>
       <Box className="grid grid-cols-2 gap-2.5">
-        {shortcuts.map((shortcut) => (
-          <ShortcutTile
-            key={shortcut.id}
-            icon={shortcut.icon}
-            label={shortcut.label}
-            onClick={() => navigate(shortcut.path)}
-          />
-        ))}
+        {shortcuts.map((shortcut) => {
+          const Icon = shortcut.icon
+          const icon = typeof Icon === 'function' ? <Icon /> : Icon
+
+          return (
+            <ShortcutTile
+              key={shortcut.id}
+              icon={icon}
+              label={shortcut.label}
+              onClick={() => navigate(shortcut.path)}
+            />
+          )
+        })}
       </Box>
     </Box>
   )

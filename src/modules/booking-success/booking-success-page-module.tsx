@@ -58,12 +58,12 @@ export function BookingSuccessPageModule() {
 
         <GalleryTeaser onSeeMore={() => navigate(ROUTE_PATHS.gallery)} />
 
-        <Box className="h-24 w-full" />
+        <Box className="w-full h-4" />
       </Box>
 
       <BottomNavActions
         onGoHome={() => navigate(ROUTE_PATHS.home, { replace: true })}
-        onViewAppointments={() => navigate(ROUTE_PATHS.home, { replace: true })}
+        onViewAppointments={() => navigate(ROUTE_PATHS.myAppointments, { replace: true })}
       />
     </Box>
   )

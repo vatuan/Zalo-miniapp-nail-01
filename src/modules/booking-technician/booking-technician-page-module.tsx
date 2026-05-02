@@ -21,7 +21,7 @@ import { useBookingStore } from '@/stores/booking-store'
 import { clsx } from '@/utils/clsx'
 
 const ANY_TECH_ID = '__any__'
-const LOADING_DURATION_MS = 600
+const LOADING_DURATION_MS = 300
 
 type SelectedTech = string
 
@@ -266,7 +266,7 @@ function TechnicianProfileSheet({ technician, isSelected, onClose, onToggleSelec
           </Box>
         </Box>
 
-        <Box className="border-t mt-auto border-border-soft bg-surface-primary px-4 py-3">
+        <Box className="border-t mt-auto border-border-soft bg-pink-50 px-4 py-3">
           <button
             type="button"
             onClick={handleCtaClick}

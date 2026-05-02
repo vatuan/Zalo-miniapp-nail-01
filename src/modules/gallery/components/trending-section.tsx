@@ -1,4 +1,5 @@
 import React from 'react'
+import { HiFire } from 'react-icons/hi2'
 import { Box, Text } from 'zmp-ui'
 
 import { NailSample } from '@/mocks/gallery-data'
@@ -19,7 +20,8 @@ export function TrendingSection({ items, isSaved, onOpen, onToggleSave, onGuestT
   return (
     <Box className="flex flex-col gap-2">
       <Box className="flex items-center gap-1 px-4">
-        <Text className="text-xs font-semibold uppercase tracking-widest text-brand-dark">🔥 Đang trending</Text>
+        <HiFire className="text-brand-dark" size={18} />
+        <Text className="text-xs font-semibold uppercase tracking-widest text-brand-dark">Đang trending</Text>
       </Box>
       <div
         className="flex gap-3 overflow-x-auto px-4 pb-1 [&::-webkit-scrollbar]:hidden"

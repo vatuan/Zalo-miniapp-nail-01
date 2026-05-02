@@ -70,12 +70,11 @@ export function ComboCard({ combo, isSelected, childServices, onToggle }: ComboC
 
         <Box
           className={clsx(
-            'mt-2 inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold',
-            isSelected ? 'bg-brand-green text-text-inverse' : 'bg-brand-pink text-text-inverse',
+            'mt-2 inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-semibold',
+            isSelected ? 'bg-brand-pink text-text-inverse' : 'bg-brand-pink text-text-inverse',
           )}
         >
-          {isSelected ? <HiCheck size={12} /> : null}
-          <Text className="text-xs font-semibold">{isSelected ? 'Đã chọn' : 'Chọn combo này'}</Text>
+          <Text className="text-xs font-semibold">{isSelected ? 'Bỏ chọn combo này' : 'Chọn combo này'}</Text>
         </Box>
       </Box>
     </Box>

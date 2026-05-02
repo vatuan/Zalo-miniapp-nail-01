@@ -16,7 +16,7 @@ export function BottomNavActions({ onGoHome, onViewAppointments }: BottomNavActi
         type="button"
         onClick={onGoHome}
         className={clsx(
-          'flex w-full items-center justify-center gap-2 rounded-full border-none px-5 py-3 text-sm font-semibold',
+          'flex px-4 items-center justify-center gap-2 rounded-full border-none py-3 text-sm font-semibold',
           'bg-button-primary-bg text-button-primary-fg active:scale-[0.99]',
         )}
       >
@@ -26,7 +26,7 @@ export function BottomNavActions({ onGoHome, onViewAppointments }: BottomNavActi
         type="button"
         onClick={onViewAppointments}
         className={clsx(
-          'flex w-full items-center justify-center gap-2 rounded-full border border-brand-pink bg-surface-primary px-5 py-3 text-sm font-semibold text-brand-pink active:scale-[0.99]',
+          'flex items-center justify-center gap-2 rounded-full border-none ring-1 ring-brand-pink bg-surface-primary py-3 text-sm font-semibold text-brand-pink active:scale-[0.99]',
         )}
       >
         <HiOutlineCalendarDays size={18} /> Xem lịch hẹn của tôi

@@ -1,4 +1,5 @@
 import React from 'react'
+import { MdArrowDropDown } from 'react-icons/md'
 
 import { ReviewSortOrder } from '@/mocks/reviews-data'
 
@@ -26,7 +27,7 @@ export function SortSelector({ value, onChange }: SortSelectorProps) {
     <div className="relative flex items-center gap-1">
       <span className="text-[13px] text-text-secondary">Sắp xếp:</span>
       <span className="text-[13px] font-semibold text-text-primary">{selected?.label}</span>
-      <span className="text-[11px] text-text-secondary">▾</span>
+      <MdArrowDropDown size={18} />
 
       {/* native select overlaid for tap interaction */}
       <select

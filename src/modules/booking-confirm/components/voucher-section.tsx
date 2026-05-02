@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { HiOutlineCheckCircle, HiOutlineExclamationCircle, HiXMark } from 'react-icons/hi2'
 import { Box, Text } from 'zmp-ui'
 
@@ -17,6 +17,12 @@ type VoucherSectionProps = {
 export function VoucherSection({ inputCode, status, onChange, onApply, onClear }: VoucherSectionProps) {
   const isValid = status.state === 'valid'
   const isInvalid = status.state === 'invalid'
+
+  useEffect(() => {
+    if (inputCode.trim() === '') {
+      onClear()
+    }
+  }, [inputCode, status.state, onClear])
 
   return (
     <Box className="flex flex-col gap-2">
@@ -48,8 +54,8 @@ export function VoucherSection({ inputCode, status, onChange, onApply, onClear }
               onChange={(event) => onChange(event.target.value.toUpperCase())}
               placeholder="Nhập mã voucher"
               className={clsx(
-                'flex-1 rounded-full border bg-card-surface px-4 py-2 text-sm text-text-primary outline-none placeholder:text-text-secondary',
-                isInvalid ? 'border-status-error' : 'border-brand-pink-soft',
+                'flex-1 border-none rounded-full ring-1 ring-brand-pink px-4 py-2 text-sm text-text-primary outline-none placeholder:text-text-secondary',
+                isInvalid ? 'ring-red-500' : 'ring-brand-pink-soft',
               )}
             />
             <button
@@ -66,10 +72,10 @@ export function VoucherSection({ inputCode, status, onChange, onApply, onClear }
               Áp dụng
             </button>
           </Box>
-          {isInvalid ? (
+          {isInvalid && inputCode && status.error ? (
             <Box className="flex items-center gap-1">
-              <HiOutlineExclamationCircle size={14} className="text-status-error" />
-              <Text className="text-xs text-status-error">{status.error}</Text>
+              <HiOutlineExclamationCircle size={14} className="text-red-500" />
+              <Text className="text-xs text-red-500">{status.error}</Text>
             </Box>
           ) : null}
         </Box>

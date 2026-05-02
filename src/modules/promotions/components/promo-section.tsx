@@ -6,7 +6,7 @@ import { Promo } from '@/mocks/promotions-data'
 import { PromoCard } from './promo-card'
 
 type PromoSectionProps = {
-  title: string
+  title: string | React.ReactNode
   promos: Promo[]
 }
 

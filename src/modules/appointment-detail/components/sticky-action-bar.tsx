@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  HiDocumentText,
   HiOutlineArrowPath,
   HiOutlineChatBubbleLeftRight,
   HiOutlineExclamationTriangle,
@@ -78,22 +79,22 @@ export function StickyActionBar({
       ) : null}
 
       {isUpcoming ? (
-        <Box className="flex gap-2">
+        <Box className="flex flex-col gap-2">
           {canReschedule ? (
             <button
               type="button"
               onClick={onReschedule}
-              className="flex flex-1 items-center justify-center gap-2 rounded-full border border-brand-pink bg-surface-primary px-3 py-3 text-sm font-semibold text-brand-pink active:scale-[0.99]"
+              className="flex flex-1 items-center justify-center gap-2 rounded-full border-none ring-1 ring-brand-pink bg-surface-primary px-3 py-3 text-sm font-semibold text-brand-pink active:scale-[0.99]"
             >
-              <HiOutlineArrowPath size={16} /> Đổi lịch
+              <HiOutlineArrowPath size={20} /> Đổi lịch
             </button>
           ) : !appointment.branchSupportsOnlineReschedule ? (
             <button
               type="button"
               onClick={onContactSalon}
-              className="flex flex-1 items-center justify-center gap-2 rounded-full border border-brand-pink bg-surface-primary px-3 py-3 text-sm font-semibold text-brand-pink active:scale-[0.99]"
+              className="flex flex-1 items-center justify-center gap-2 rounded-full border-none ring-1 ring-brand-pink bg-surface-primary px-3 py-3 text-sm font-semibold text-brand-pink active:scale-[0.99]"
             >
-              <HiOutlineChatBubbleLeftRight size={16} /> Nhắn tin salon để đổi lịch
+              <HiOutlineChatBubbleLeftRight size={20} /> Nhắn tin salon để đổi lịch
             </button>
           ) : null}
 
@@ -101,10 +102,10 @@ export function StickyActionBar({
             type="button"
             onClick={onCancel}
             className={clsx(
-              'flex flex-1 items-center justify-center gap-2 rounded-full border border-status-error bg-status-error-soft px-3 py-3 text-sm font-semibold text-status-error active:scale-[0.99]',
+              'flex flex-1 items-center justify-center gap-2 rounded-full border-none ring-1 ring-red-500 bg-red-100 px-3 py-3 text-sm font-semibold text-red-500 active:scale-[0.99]',
             )}
           >
-            <HiOutlineXCircle size={16} /> Hủy lịch
+            Hủy lịch
           </button>
         </Box>
       ) : null}

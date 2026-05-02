@@ -26,7 +26,7 @@ export function TierProgress() {
         </Text>
       </Box>
 
-      <Box className="relative h-2.5 w-full overflow-hidden rounded-full bg-surface-muted">
+      <Box className="relative h-2.5 w-full overflow-hidden rounded-full bg-brand-pink-ultra-soft">
         <Box className="h-full rounded-full bg-brand-pink" style={{ width: `${nextTierProgress.progressPercent}%` }} />
       </Box>
 

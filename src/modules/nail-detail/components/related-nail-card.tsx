@@ -12,7 +12,7 @@ export function RelatedNailCard({ nail, onClick }: RelatedNailCardProps) {
     <button
       type="button"
       onClick={() => onClick(nail.id)}
-      className="shrink-0 overflow-hidden rounded-xl active:opacity-80"
+      className="shrink-0 overflow-hidden border-none rounded-xl active:opacity-80"
       style={{ width: 96, height: 96 }}
     >
       <img src={nail.imageUrl} alt={nail.id} className="h-full w-full object-cover" loading="lazy" />

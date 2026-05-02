@@ -2,8 +2,8 @@ import React from 'react'
 import { HiOutlineSparkles } from 'react-icons/hi2'
 import { Box, Text } from 'zmp-ui'
 
-import { formatMoney } from '@/utils/format'
 import { clsx } from '@/utils/clsx'
+import { formatMoney } from '@/utils/format'
 
 type PointsToggleProps = {
   isEnabled: boolean
@@ -20,8 +20,8 @@ export function PointsToggle({ isEnabled, availablePoints, discountAmount, onTog
       type="button"
       onClick={onToggle}
       className={clsx(
-        'flex w-full items-center justify-between rounded-2xl border px-4 py-3 text-left transition-colors active:scale-[0.99]',
-        isEnabled ? 'border-brand-pink bg-brand-pink-ultra-soft' : 'border-brand-pink-soft bg-card-surface',
+        'flex w-full items-center justify-between rounded-2xl border-none px-4 py-3 text-left transition-colors active:scale-[0.99]',
+        isEnabled ? 'ring-1 ring-brand-pink bg-brand-pink-ultra-soft' : 'ring-1 ring-brand-pink-soft bg-card-surface',
       )}
     >
       <Box className="flex items-center gap-2">

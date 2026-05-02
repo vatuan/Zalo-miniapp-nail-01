@@ -29,7 +29,7 @@ export function BookingCodeRow({ code }: BookingCodeRowProps) {
       <button
         type="button"
         onClick={handleCopy}
-        className="flex items-center gap-1 rounded-full border border-brand-pink-soft bg-surface-primary px-3 py-1 text-xs font-semibold text-brand-pink active:scale-[0.99]"
+        className="flex items-center gap-1 rounded-full border-none ring-1 ring-brand-pink-soft bg-surface-primary px-3 py-1 text-xs font-semibold text-brand-pink active:scale-[0.99]"
       >
         <HiOutlineClipboardDocument size={14} /> Sao chép
       </button>

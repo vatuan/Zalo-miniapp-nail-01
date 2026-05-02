@@ -51,6 +51,7 @@ module.exports = {
           danger: 'var(--color-status-danger)',
           'danger-soft': 'var(--color-status-danger-soft)',
           'warning-soft': 'var(--color-status-warning-soft)',
+          success: 'var(--color-status-success)',
           'success-soft': 'var(--color-status-success-soft)',
         },
         overlay: {

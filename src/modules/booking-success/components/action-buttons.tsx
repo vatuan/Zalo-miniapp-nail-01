@@ -13,7 +13,7 @@ export function ActionButtons({ onAddToCalendar, onShareToZalo }: ActionButtonsP
       <button
         type="button"
         onClick={onAddToCalendar}
-        className="flex flex-1 items-center justify-center gap-2 rounded-full border border-brand-pink-soft bg-card-surface px-4 py-3 text-sm font-semibold text-text-primary active:scale-[0.99]"
+        className="flex flex-1 items-center justify-center gap-2 rounded-full border-none ring-1 ring-brand-pink-soft bg-card-surface px-4 py-3 text-sm font-semibold text-text-primary active:scale-[0.99]"
       >
         <HiOutlineCalendar size={16} className="text-brand-pink" />
         <Text className="text-sm font-semibold text-text-primary">Thêm vào lịch</Text>
@@ -22,7 +22,7 @@ export function ActionButtons({ onAddToCalendar, onShareToZalo }: ActionButtonsP
       <button
         type="button"
         onClick={onShareToZalo}
-        className="flex flex-1 items-center justify-center gap-2 rounded-full border border-brand-pink-soft bg-card-surface px-4 py-3 text-sm font-semibold text-text-primary active:scale-[0.99]"
+        className="flex flex-1 items-center justify-center gap-2 rounded-full border-none ring-1 ring-brand-pink-soft bg-card-surface px-4 py-3 text-sm font-semibold text-text-primary active:scale-[0.99]"
       >
         <HiOutlineShare size={16} className="text-brand-pink" />
         <Text className="text-sm font-semibold text-text-primary">Chia sẻ qua Zalo</Text>

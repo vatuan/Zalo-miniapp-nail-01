@@ -111,7 +111,7 @@ export function AppointmentCancelPageModule() {
 
         <PointsImpact pendingPoints={appointment.pendingPoints ?? 0} />
 
-        <Box className="h-20 w-full" />
+        <Box className="h-5 w-full" />
       </Box>
 
       <CancelActionBar

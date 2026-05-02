@@ -43,9 +43,9 @@ export function RequiredServicesSection({ services, totalDurationMin, priceFrom 
         ))}
       </Box>
 
-      <Box className="flex items-center justify-between rounded-xl bg-brand-cream px-3 py-2">
-        <Text className="text-[13px] text-text-secondary">Giá từ</Text>
-        <Text className="text-[15px] font-bold text-brand-pink">{formatMoney(priceFrom)}</Text>
+      <Box className="flex items-center justify-between rounded-xl px-3 py-2">
+        <Text className="text-sm font-semibold text-text-secondary">Giá từ</Text>
+        <Text className="text-md font-bold text-brand-pink">{formatMoney(priceFrom)}</Text>
       </Box>
     </Box>
   )

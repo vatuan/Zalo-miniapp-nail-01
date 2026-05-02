@@ -8,7 +8,7 @@ const STATUS_META: Record<AppointmentStatus, { label: string; bg: string; text: 
   confirmed: {
     label: 'Đã xác nhận',
     bg: 'bg-status-success-soft',
-    text: 'text-status-success',
+    text: 'text-green-500',
     icon: <HiCheckCircle size={12} />,
   },
   pending: {
@@ -19,20 +19,20 @@ const STATUS_META: Record<AppointmentStatus, { label: string; bg: string; text: 
   },
   completed: {
     label: 'Hoàn thành',
-    bg: 'bg-border-soft',
-    text: 'text-text-secondary',
+    bg: 'bg-green-500',
+    text: 'text-white',
     icon: <HiOutlineCheckCircle size={12} />,
   },
   cancelled: {
     label: 'Đã hủy',
-    bg: 'bg-status-error-soft',
-    text: 'text-status-error',
+    bg: 'bg-red-500',
+    text: 'text-white',
     icon: <HiOutlineXCircle size={12} />,
   },
   cancelled_by_salon: {
     label: 'Salon hủy',
-    bg: 'bg-status-error-soft',
-    text: 'text-status-error',
+    bg: 'bg-red-500',
+    text: 'text-white',
     icon: <HiXCircle size={12} />,
   },
 }

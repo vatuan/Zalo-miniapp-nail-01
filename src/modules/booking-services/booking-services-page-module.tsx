@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { HiOutlineExclamationTriangle, HiOutlineSparkles } from 'react-icons/hi2'
+import { HiOutlineExclamationTriangle } from 'react-icons/hi2'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Box, Button, Text, useSnackbar } from 'zmp-ui'
 
@@ -8,7 +8,6 @@ import { Combo, mockCategories, mockCombos, mockServices, Service, ServiceCatego
 import { ROUTE_PATHS } from '@/routing/paths'
 import { BookingProgressBar, PageHeader, SkeletonLoader } from '@/shared/components'
 import { useBookingStore } from '@/stores/booking-store'
-import { clsx } from '@/utils/clsx'
 
 import { CATEGORY_ICON } from './category-icon-map'
 import { CategoryTabBar } from './components/category-tab-bar'
@@ -17,7 +16,7 @@ import { SelectionSummaryBar } from './components/selection-summary-bar'
 import { ServiceDetailSheet } from './components/service-detail-sheet'
 import { ServiceItem } from './components/service-item'
 
-const LOADING_DURATION_MS = 800
+const LOADING_DURATION_MS = 300
 const DURATION_BUFFER_MIN = 15
 const OVER_TIME_THRESHOLD_MIN = 240
 

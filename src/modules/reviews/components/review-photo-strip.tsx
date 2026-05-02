@@ -14,13 +14,13 @@ export function ReviewPhotoStrip({ photos, isPhotoReported }: ReviewPhotoStripPr
 
   return (
     <>
-      <div className="flex gap-2 overflow-x-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+      <div className="flex gap-2 overflow-x-auto p-1" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
         {photos.map((url) => (
           <button
             key={url}
             type="button"
             onClick={() => setLightboxUrl(url)}
-            className="shrink-0 overflow-hidden rounded-lg border border-border-soft active:opacity-80"
+            className="shrink-0 overflow-hidden rounded-lg border-none ring-1 ring-brand-pink-soft active:opacity-80"
           >
             <img src={url} alt="Ảnh đánh giá" className="h-16 w-16 object-cover" loading="lazy" />
           </button>

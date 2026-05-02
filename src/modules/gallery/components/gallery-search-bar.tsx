@@ -18,7 +18,7 @@ export function GallerySearchBar({ isExpanded, query, onChange, onClose }: Galle
     if (isExpanded) inputRef.current?.focus()
   }, [isExpanded])
 
-  if (!isExpanded) return null
+  if (isExpanded) return null
 
   return (
     <Box className="px-4 py-2">
@@ -32,17 +32,20 @@ export function GallerySearchBar({ isExpanded, query, onChange, onClose }: Galle
           placeholder="Tìm mẫu nail..."
           className="flex-1 border-none bg-transparent text-sm text-text-primary outline-none placeholder:text-text-secondary"
         />
-        <button
-          type="button"
-          onClick={() => {
-            onChange('')
-            onClose()
-          }}
-          className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-none bg-transparent text-text-secondary"
-          aria-label="Đóng tìm kiếm"
-        >
-          <HiOutlineXMark size={18} />
-        </button>
+
+        {query && (
+          <button
+            type="button"
+            onClick={() => {
+              onChange('')
+              onClose()
+            }}
+            className="flex shrink-0 items-center justify-center rounded-full border-none bg-transparent text-text-secondary"
+            aria-label="Đóng tìm kiếm"
+          >
+            <HiOutlineXMark size={18} />
+          </button>
+        )}
       </Box>
     </Box>
   )

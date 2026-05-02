@@ -22,7 +22,7 @@ export function TextReviewSection({ value, charCount, maxLength, onChange }: Tex
           maxLength={maxLength}
           placeholder="Chia sẻ cảm nhận của bạn về dịch vụ..."
           rows={4}
-          className="w-full resize-none rounded-xl border border-border-soft bg-surface-primary px-3 pb-6 pt-3 text-[14px] text-text-primary placeholder:text-text-secondary focus:border-brand-pink focus:outline-none"
+          className="w-full resize-none rounded-xl border border-brand-pink-soft bg-surface-primary px-3 pb-6 pt-3 text-[14px] text-text-primary placeholder:text-text-secondary focus:border-brand-pink focus:outline-none"
         />
         <span
           className={clsx(

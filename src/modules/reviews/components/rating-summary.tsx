@@ -17,8 +17,8 @@ export function RatingSummary({ summary }: RatingSummaryProps) {
 
   return (
     <Box className="flex flex-col gap-3 rounded-xl border border-border-soft bg-surface-primary p-4">
-      <Box className="flex items-baseline gap-1.5">
-        <HiStar size={24} className="text-brand-gold" />
+      <Box className="flex items-center gap-1.5">
+        <HiStar size={24} className="text-brand-gold flex items-center" />
         <Text className="text-2xl font-bold text-text-primary">{summary.overallScore.toFixed(1)}</Text>
         <Text className="text-base text-text-secondary">/ 5</Text>
       </Box>

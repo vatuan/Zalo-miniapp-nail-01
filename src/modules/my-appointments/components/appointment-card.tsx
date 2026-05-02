@@ -76,7 +76,7 @@ export function AppointmentCard({ appointment, onOpenDetail, onCancel, onRebook,
             event.stopPropagation()
             onOpenDetail(appointment.id)
           }}
-          className="flex-1 rounded-full border border-brand-pink-soft bg-surface-primary px-3 py-2 text-xs font-semibold text-text-primary active:scale-[0.99]"
+          className="flex-1 rounded-full border-none ring-1 ring-brand-pink-soft bg-surface-primary px-3 py-2 text-xs font-semibold text-brand-pink active:scale-[0.99]"
         >
           Xem chi tiết
         </button>
@@ -89,7 +89,7 @@ export function AppointmentCard({ appointment, onOpenDetail, onCancel, onRebook,
               onCancel(appointment.id)
             }}
             className={clsx(
-              'flex-1 rounded-full border border-status-error bg-surface-primary px-3 py-2 text-xs font-semibold text-status-error active:scale-[0.99]',
+              'flex-1 rounded-full border-none ring-1 ring-red-500 bg-surface-primary px-3 py-2 text-xs font-semibold text-red-500 active:scale-[0.99]',
             )}
           >
             Hủy lịch

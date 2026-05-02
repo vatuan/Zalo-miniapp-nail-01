@@ -19,7 +19,7 @@ export function LocationSection({ appointment, onOpenDirections }: LocationSecti
       <button
         type="button"
         onClick={onOpenDirections}
-        className="mt-1 inline-flex w-fit items-center gap-1 rounded-full border border-brand-pink bg-surface-primary px-3 py-1 text-xs font-semibold text-brand-pink active:scale-[0.99]"
+        className="mt-1 inline-flex w-fit items-center gap-1 rounded-full border-none ring-1 ring-brand-pink-soft bg-surface-primary px-3 py-1 text-xs font-semibold text-brand-pink active:scale-[0.99]"
       >
         <HiOutlineMapPin size={14} /> Chỉ đường
       </button>

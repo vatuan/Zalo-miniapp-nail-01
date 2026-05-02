@@ -19,7 +19,7 @@ export function BranchSearch({ value, onChange }: BranchSearchProps) {
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder="Tìm theo quận/tên..."
-        className="w-full rounded-xl border-none bg-surface-muted py-2.5 pl-10 pr-10 text-sm text-text-primary ring-1 ring-brand-pink placeholder:text-text-secondary focus:outline-none"
+        className="w-full rounded-xl border-none py-2.5 pl-10 pr-10 text-sm text-text-primary ring-1 ring-brand-pink placeholder:text-text-secondary focus:outline-none"
       />
 
       {value ? (

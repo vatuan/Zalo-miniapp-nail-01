@@ -33,7 +33,7 @@ export function ComboCard({ combo, childServices, onOpenDetail, onBook }: ComboC
       className="relative rounded-xl border border-brand-pink-soft bg-gradient-to-br from-brand-pink-soft to-brand-cream p-3 shadow-sm active:scale-[0.99]"
     >
       {discountPercent > 0 ? (
-        <Box className="absolute -right-1 -top-1 rounded-full bg-status-error px-2 py-0.5 text-[10px] font-bold text-text-inverse shadow">
+        <Box className="absolute right-2 top-2 rounded-full ring-1 ring-brand-pink text-brand-pink px-2 py-0.5 text-[10px] font-bold shadow">
           -{discountPercent}%
         </Box>
       ) : null}

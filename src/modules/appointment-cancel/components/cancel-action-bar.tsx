@@ -18,10 +18,10 @@ export function CancelActionBar({ isSubmittable, isSubmitting, onConfirm, onKeep
         disabled={!isSubmittable || isSubmitting}
         onClick={onConfirm}
         className={clsx(
-          'flex flex-1 items-center justify-center gap-2 rounded-full border px-3 py-3 text-sm font-semibold transition-colors active:scale-[0.99]',
+          'flex flex-1 items-center justify-center gap-2 rounded-full border-none ring-1 px-3 py-3 text-sm font-semibold transition-colors active:scale-[0.99]',
           !isSubmittable || isSubmitting
-            ? 'cursor-not-allowed border-border-soft bg-surface-muted text-text-secondary'
-            : 'border-status-error bg-status-error-soft text-status-error',
+            ? 'cursor-not-allowed ring-border-soft bg-surface-muted text-text-secondary'
+            : 'ring-red-500 bg-red-100 text-red-500',
         )}
       >
         {isSubmitting ? (

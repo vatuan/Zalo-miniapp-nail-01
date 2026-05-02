@@ -58,57 +58,59 @@ export function FilterChipsRow({
 }: FilterChipsRowProps) {
   return (
     <div
-      className="flex gap-2 overflow-x-auto px-4 py-2 [&::-webkit-scrollbar]:hidden"
+      className="flex items-center gap-2 overflow-x-auto px-4 py-2 pb-4 [&::-webkit-scrollbar]:hidden"
       style={{ scrollbarWidth: 'none' }}
     >
-      <button
-        type="button"
-        onClick={onClearAll}
-        className={clsx(
-          'flex shrink-0 items-center rounded-full border-none px-4 py-1.5 transition-colors',
-          !hasActive
-            ? 'bg-brand-pink text-text-inverse ring-1 ring-brand-pink'
-            : 'bg-surface-primary text-text-secondary ring-1 ring-gray-300',
-        )}
-      >
-        <Text className="text-xs font-semibold">Tất cả</Text>
-      </button>
+      <div className="flex items-center flex-1 gap-3 overflow-x-auto p-1">
+        <button
+          type="button"
+          onClick={onClearAll}
+          className={clsx(
+            'flex shrink-0 items-center rounded-full border-none px-4 py-1.5 transition-colors',
+            !hasActive
+              ? 'bg-brand-pink text-text-inverse ring-1 ring-brand-pink'
+              : 'bg-surface-primary text-text-secondary ring-1 ring-gray-300',
+          )}
+        >
+          <Text className="text-xs font-semibold">Tất cả</Text>
+        </button>
 
-      {QUICK_CHIPS.map((chip) => {
-        const active = isChipActive(filters, chip)
-        return (
-          <button
-            key={`${chip.kind}-${chip.value}`}
-            type="button"
-            onClick={() => {
-              if (chip.kind === 'style') onToggleStyle(chip.value)
-              else if (chip.kind === 'occasion') onToggleOccasion(chip.value)
-              else onToggleTechnique(chip.value)
-            }}
-            className={clsx(
-              'flex shrink-0 items-center rounded-full border-none px-4 py-1.5 transition-colors',
-              active
-                ? 'bg-brand-pink text-text-inverse ring-1 ring-brand-pink'
-                : 'bg-surface-primary text-text-secondary ring-1 ring-gray-300',
-            )}
-          >
-            <Text className="text-xs font-semibold">{chip.label}</Text>
-          </button>
-        )
-      })}
+        {QUICK_CHIPS.map((chip) => {
+          const active = isChipActive(filters, chip)
+          return (
+            <button
+              key={`${chip.kind}-${chip.value}`}
+              type="button"
+              onClick={() => {
+                if (chip.kind === 'style') onToggleStyle(chip.value)
+                else if (chip.kind === 'occasion') onToggleOccasion(chip.value)
+                else onToggleTechnique(chip.value)
+              }}
+              className={clsx(
+                'flex shrink-0 items-center rounded-full border-none px-4 py-1.5 transition-colors',
+                active
+                  ? 'bg-brand-pink text-text-inverse ring-1 ring-brand-pink'
+                  : 'bg-surface-primary text-text-secondary ring-1 ring-gray-300',
+              )}
+            >
+              <Text className="text-xs font-semibold">{chip.label}</Text>
+            </button>
+          )
+        })}
+      </div>
 
       <button
         type="button"
         onClick={onOpenSheet}
         className={clsx(
-          'flex shrink-0 items-center gap-1 rounded-full border-none px-4 py-1.5',
+          'flex h-[28px] ml-auto shrink-0 items-center gap-1 rounded-full border-none px-4 py-1.5',
           activeFilterCount > 0
             ? 'bg-brand-dark text-text-inverse ring-1 ring-brand-dark'
             : 'bg-surface-primary text-text-primary ring-1 ring-brand-pink',
         )}
       >
         <HiOutlineAdjustmentsHorizontal size={14} />
-        <Text className="text-xs font-semibold">+ Lọc{activeFilterCount > 0 ? ` (${activeFilterCount})` : ''}</Text>
+        <Text className="text-xs font-semibold">Lọc{activeFilterCount > 0 ? ` (${activeFilterCount})` : ''}</Text>
       </button>
     </div>
   )

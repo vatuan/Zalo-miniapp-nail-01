@@ -22,7 +22,7 @@ export function FooterBlock() {
       <button
         type="button"
         onClick={handleLogout}
-        className="rounded-full border border-status-danger bg-transparent px-6 py-2 text-[14px] font-semibold text-status-danger active:opacity-80"
+        className="rounded-full border-none ring-1 ring-status-danger bg-transparent px-6 py-2 text-[14px] font-semibold text-status-danger active:opacity-80"
       >
         Đăng xuất
       </button>

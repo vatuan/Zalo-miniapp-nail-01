@@ -13,14 +13,14 @@ export function FilterSheetFooter({ resultCount, onReset, onApply }: FilterSheet
       <button
         type="button"
         onClick={onReset}
-        className="rounded-full border border-brand-pink bg-surface-primary py-2.5 text-sm font-semibold text-brand-pink"
+        className="rounded-full border-none ring-1 ring-brand-pink bg-surface-primary py-2.5 text-sm font-semibold text-brand-pink"
       >
         Đặt lại
       </button>
       <button
         type="button"
         onClick={onApply}
-        className="rounded-full border-none bg-button-primary-bg py-2.5 text-sm font-semibold text-button-primary-fg"
+        className="rounded-full border-none ring-1 ring-brand-pink bg-button-primary-bg py-2.5 text-sm font-semibold text-button-primary-fg"
       >
         Áp dụng ({resultCount} kết quả)
       </button>

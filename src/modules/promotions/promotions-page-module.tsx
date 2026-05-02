@@ -1,6 +1,8 @@
 import React, { useCallback, useMemo } from 'react'
+import { GoDotFill } from 'react-icons/go'
+import { HiFire } from 'react-icons/hi2'
 import { useNavigate } from 'react-router-dom'
-import { Box } from 'zmp-ui'
+import { Box, Text } from 'zmp-ui'
 
 import { useConfigurePageHeader } from '@/layouts/page-layout-context'
 import { getActivePromos, getEndingSoonPromos } from '@/mocks/promotions-data'
@@ -47,8 +49,24 @@ export function PromotionsPageModule() {
 
       {activeTab === 0 ? (
         <Box className="flex flex-col gap-5 px-4 py-4 pb-8">
-          <PromoSection title="🔥 Đang diễn ra" promos={activePromos} />
-          <PromoSection title="Sắp kết thúc 🔴" promos={endingSoonPromos} />
+          <PromoSection
+            title={
+              <div className="flex items-center gap-1">
+                <HiFire size={20} />
+                <Text className="text-sm">Đang diễn ra</Text>
+              </div>
+            }
+            promos={activePromos}
+          />
+          <PromoSection
+            title={
+              <div className="flex items-center gap-1">
+                <GoDotFill size={20} className="text-red-500" />
+                <Text className="text-sm text-text-secondary">Sắp kết thúc</Text>
+              </div>
+            }
+            promos={endingSoonPromos}
+          />
         </Box>
       ) : null}
 

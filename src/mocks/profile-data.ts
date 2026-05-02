@@ -1,3 +1,6 @@
+import { HiCalendar, HiHeart, HiIdentification, HiTicket } from 'react-icons/hi2'
+import { IoDiamondOutline } from 'react-icons/io5'
+
 import { ROUTE_PATHS } from '@/routing/paths'
 
 import { TierId } from './loyalty-data'
@@ -17,7 +20,7 @@ export interface ProfileUser {
 export interface ProfileShortcut {
   id: string
   label: string
-  icon: string // emoji
+  icon: React.ReactNode | React.ComponentType
   path: string // ROUTE_PATHS value
 }
 
@@ -26,7 +29,8 @@ export interface ProfileShortcut {
 export const userProfile: ProfileUser = {
   name: 'Nguyễn Mỹ Linh',
   phone: '0901 234 567',
-  avatarUrl: 'https://i.pravatar.cc/128?img=47',
+  avatarUrl:
+    'https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww',
   tier: 'silver',
   points: 450,
   memberSince: '01/2024',
@@ -50,26 +54,26 @@ export const profileEdgeCases: ProfileUser = {
 export const shortcuts: ProfileShortcut[] = [
   {
     id: 'appointments',
-    label: 'Lịch hẹn',
-    icon: '📅',
+    label: 'Lịch hẹn của tôi',
+    icon: HiCalendar,
     path: ROUTE_PATHS.myAppointments,
   },
   {
     id: 'loyalty',
-    label: 'Điểm',
-    icon: '💎',
+    label: 'Điểm thưởng & Hạng thành viên',
+    icon: IoDiamondOutline,
     path: ROUTE_PATHS.loyalty,
   },
   {
     id: 'saved-nails',
     label: 'Mẫu nail đã lưu',
-    icon: '🖼',
+    icon: HiHeart,
     path: ROUTE_PATHS.gallery,
   },
   {
     id: 'vouchers',
     label: 'Ưu đãi & Voucher',
-    icon: '🎟',
+    icon: HiTicket,
     path: ROUTE_PATHS.promotions,
   },
 ]

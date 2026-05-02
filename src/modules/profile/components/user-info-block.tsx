@@ -37,7 +37,7 @@ export function UserInfoBlock() {
           onClick={() => {
             // edit profile — no-op for now
           }}
-          className="flex shrink-0 items-center gap-1 self-start rounded-full px-2 py-1 text-[13px] font-medium text-brand-pink"
+          className="flex shrink-0 border-none bg-transparent items-center gap-1 self-start rounded-full px-2 py-1 text-[13px] font-medium text-brand-pink"
         >
           <HiOutlinePencilSquare size={14} />
           Chỉnh sửa
@@ -47,7 +47,7 @@ export function UserInfoBlock() {
       <button
         type="button"
         onClick={() => navigate(ROUTE_PATHS.loyalty)}
-        className="flex items-center gap-2 rounded-xl border border-border-soft bg-surface-muted px-3 py-2 text-left active:opacity-80"
+        className="flex items-center gap-2 rounded-xl border-none ring-1 ring-border-soft bg-surface-muted px-3 py-2 text-left active:opacity-80"
       >
         <Text className="flex-1 text-[14px] font-semibold text-text-primary">
           {tier.icon} {tierName} • {userProfile.points} điểm

@@ -24,7 +24,7 @@ export function MonthGroupSection({
 }: MonthGroupSectionProps) {
   return (
     <Box className="flex flex-col gap-2">
-      <Box className="sticky top-12 z-[5] -mx-4 bg-app-bg px-4 py-2">
+      <Box className="sticky top-11 z-[5] -mx-4 bg-app-bg px-4 py-2">
         <Text className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">{monthLabel}</Text>
       </Box>
       <Box className="flex flex-col gap-3">

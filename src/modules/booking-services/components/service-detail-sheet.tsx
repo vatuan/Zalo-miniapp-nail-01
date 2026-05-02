@@ -1,6 +1,6 @@
 import React from 'react'
-import { HiCheck, HiOutlineClock, HiOutlineCurrencyDollar } from 'react-icons/hi2'
-import { Box, Button, Sheet, Text } from 'zmp-ui'
+import { HiOutlineClock, HiOutlineCurrencyDollar } from 'react-icons/hi2'
+import { Box, Sheet, Text } from 'zmp-ui'
 
 import { Service, SERVICE_NOTES } from '@/mocks/service-data'
 import { clsx } from '@/utils/clsx'
@@ -74,9 +74,9 @@ export function ServiceDetailSheet({ service, isOpen, isSelected, onClose, onSel
           </Box>
         </Box>
 
-        <Box className="grid grid-cols-2 gap-2 border-t border-border-soft bg-surface-primary p-4">
+        <Box className="grid grid-cols-2 gap-2 border-t border-border-soft bg-pink-50 p-4">
           <button
-            className="rounded-full text-sm border-none bg-surface-primary text-brand-dark font-semibold"
+            className="rounded-full text-sm border-none bg-transparent text-brand-dark font-semibold"
             onClick={onClose}
           >
             Đóng
@@ -87,12 +87,11 @@ export function ServiceDetailSheet({ service, isOpen, isSelected, onClose, onSel
             className={clsx(
               'rounded-full font-semibold py-2.5 border-none flex items-center justify-center gap-2 text-sm',
               isSelected
-                ? 'bg-brand-green text-text-inverse'
+                ? 'bg-button-primary-bg text-text-inverse'
                 : 'bg-button-primary-bg text-button-primary-fg disabled:opacity-50',
             )}
           >
-            {isSelected ? <HiCheck size={18} /> : undefined}
-            {isSelected ? 'Đã chọn' : 'Thêm vào lịch'}
+            {isSelected ? 'Bỏ chọn' : 'Thêm vào lịch'}
           </button>
         </Box>
       </Box>

@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { HiOutlineMagnifyingGlass } from 'react-icons/hi2'
+import { LuSearchX } from 'react-icons/lu'
 import { useNavigate } from 'react-router-dom'
 import { Box, Button, Text, useSnackbar } from 'zmp-ui'
 
@@ -14,7 +14,7 @@ import { BranchCard } from './components/branch-card'
 import { BranchSearchInput } from './components/branch-search-input'
 import { GpsPermissionBanner } from './components/gps-permission-banner'
 
-const LOADING_DURATION_MS = 1000
+const LOADING_DURATION_MS = 300
 
 const COMBINING_DIACRITICS = /[̀-ͯ]/g
 
@@ -132,17 +132,16 @@ export function BranchSelectionPageModule() {
             </Text>
             {filteredBranches.length === 0 ? (
               <Box className="flex flex-col items-center gap-3 rounded-xl border border-card-border bg-card-surface px-4 py-8 text-center">
-                <Box className="flex h-12 w-12 items-center justify-center rounded-full bg-surface-muted text-text-secondary">
-                  <HiOutlineMagnifyingGlass size={22} />
+                <Box className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-pink-ultra-soft text-text-secondary">
+                  <LuSearchX size={22} />
                 </Box>
                 <Text className="text-sm text-text-primary">Không tìm thấy chi nhánh phù hợp</Text>
-                <Button
-                  size="small"
-                  className="rounded-full bg-button-primary-bg text-xs font-semibold text-button-primary-fg"
+                <button
+                  className="rounded-full border-none px-4 py-1.5 ring-1 ring-brand-pink text-brand-pink bg-transparent text-xs font-semibold"
                   onClick={() => setSearchQuery('')}
                 >
                   Xóa tìm kiếm
-                </Button>
+                </button>
               </Box>
             ) : (
               <Box className="flex flex-col gap-3">

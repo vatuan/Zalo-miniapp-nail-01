@@ -22,17 +22,17 @@ type VoucherFilterChipsProps = {
 
 export function VoucherFilterChips({ activeFilter, activeCount, onChange }: VoucherFilterChipsProps) {
   return (
-    <div className="flex gap-2 overflow-x-auto pb-1" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+    <div className="flex gap-2 overflow-x-auto pb-1 p-1" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
       {FILTER_OPTIONS.map((opt) => (
         <button
           key={opt.value}
           type="button"
           onClick={() => onChange(opt.value)}
           className={clsx(
-            'shrink-0 rounded-full border px-3.5 py-1.5 text-[13px] font-medium transition-colors',
+            'shrink-0 rounded-full border-none px-3.5 py-1.5 text-xs font-medium transition-colors',
             activeFilter === opt.value
-              ? 'border-brand-pink bg-brand-pink text-text-inverse'
-              : 'border-border-default bg-surface-primary text-text-secondary',
+              ? 'ring-1 ring-brand-pink bg-transparent text-brand-pink'
+              : 'ring-1 ring-brand-pink-soft bg-transparent text-brand-pink-soft',
           )}
         >
           {opt.getLabel(activeCount)}

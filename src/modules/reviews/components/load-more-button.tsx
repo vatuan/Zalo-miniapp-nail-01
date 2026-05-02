@@ -9,7 +9,7 @@ export function LoadMoreButton({ onClick }: LoadMoreButtonProps) {
     <button
       type="button"
       onClick={onClick}
-      className="w-full rounded-full border border-border-default bg-surface-primary py-3 text-[13px] font-medium text-text-secondary active:bg-surface-muted"
+      className="w-full rounded-full border-none ring-1 ring-brand-pink bg-surface-primary py-3 text-sm font-semibold text-brand-pink active:bg-surface-muted"
     >
       Xem thêm đánh giá
     </button>

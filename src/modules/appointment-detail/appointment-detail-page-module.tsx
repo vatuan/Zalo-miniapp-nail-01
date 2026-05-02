@@ -127,7 +127,7 @@ export function AppointmentDetailPageModule() {
 
         <RemindersSection />
 
-        <Box className="h-20 w-full" />
+        <Box className="h-6 w-full" />
       </Box>
 
       <StickyActionBar

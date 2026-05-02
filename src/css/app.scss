@@ -25,6 +25,48 @@ body {
   color: var(--color-button-secondary-fg);
 }
 
+.react-calendar__navigation {
+  button.react-calendar__navigation__arrow.react-calendar__navigation__prev-button {
+    border: none;
+    background: transparent;
+    &:focus {
+      background: transparent;
+    }
+  }
+
+  button.react-calendar__navigation__arrow.react-calendar__navigation__next-button {
+    border: none;
+    background: transparent;
+
+    &:focus {
+      background: transparent;
+    }
+  }
+
+  .react-calendar__navigation__label {
+    background: transparent !important;
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+}
+
+.react-calendar__viewContainer {
+  .react-calendar__tile--active {
+    background-color: var(--color-brand-pink-soft);
+    border-radius: 8px;
+  }
+  .react-calendar__tile--now {
+    background-color: var(--color-brand-pink--ultra-soft);
+  }
+  .react-calendar__tile--now:enabled:hover,
+  .react-calendar__tile--now:enabled:focus {
+    background-color: var(--color-brand-pink--ultra-soft);
+  }
+  .react-calendar__tile--active:enabled:hover,
+  .react-calendar__tile--active:enabled:focus {
+    background-color: var(--color-brand-pink-soft);
+  }
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

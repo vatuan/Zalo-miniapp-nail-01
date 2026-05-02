@@ -15,7 +15,7 @@ type StickyActionBarProps = {
   detail: NailDetail
 }
 
-const PROMPT_TIMEOUT_MS = 3000
+const PROMPT_TIMEOUT_MS = 300
 
 export function StickyActionBar({ detail }: StickyActionBarProps) {
   const navigate = useNavigate()

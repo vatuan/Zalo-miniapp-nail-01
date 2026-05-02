@@ -16,7 +16,7 @@ export function PointHistory() {
     <Box className="flex flex-col gap-3 rounded-2xl border border-border-soft bg-surface-primary p-4">
       <Text className="text-[13px] font-semibold uppercase tracking-wide text-text-secondary">Lịch sử điểm</Text>
 
-      <ul className="flex flex-col divide-y divide-border-soft">
+      <ul className="flex flex-col divide-y divide-border-soft p-0 m-0">
         {visible.map((entry) => (
           <PointHistoryRow key={entry.id} entry={entry} />
         ))}
@@ -26,9 +26,9 @@ export function PointHistory() {
         <button
           type="button"
           onClick={() => setShowAll((v) => !v)}
-          className="self-center text-[13px] font-medium text-brand-pink"
+          className="self-center border-none bg-transparent text-sm font-semibold text-brand-pink"
         >
-          {showAll ? 'Thu gọn ↑' : 'Xem tất cả lịch sử →'}
+          {showAll ? 'Thu gọn' : 'Xem tất cả lịch sử'}
         </button>
       ) : null}
     </Box>

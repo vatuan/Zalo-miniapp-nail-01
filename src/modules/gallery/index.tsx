@@ -21,7 +21,7 @@ import { useGalleryFilters } from './hooks/use-gallery-filters'
 import { useGalleryInfiniteScroll } from './hooks/use-gallery-infinite-scroll'
 import { useSavedDesigns } from './hooks/use-saved-designs'
 
-const LOADING_DURATION_MS = 600
+const LOADING_DURATION_MS = 300
 
 export function GalleryPageModule() {
   const navigate = useNavigate()

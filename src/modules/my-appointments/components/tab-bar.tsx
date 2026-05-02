@@ -42,7 +42,7 @@ export function TabBar({ activeTab, upcomingCount, onChange }: TabBarProps) {
               {tab.label}
             </Text>
             {showBadge ? (
-              <Text className="rounded-full bg-brand-pink px-1.5 text-[10px] font-bold text-text-inverse">
+              <Text className="rounded-full flex items-center justify-center bg-brand-pink w-5 h-5 text-xs font-bold text-text-inverse">
                 {upcomingCount}
               </Text>
             ) : null}

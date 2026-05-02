@@ -14,10 +14,10 @@ export function FilterChip({ label, isActive, onClick }: FilterChipProps) {
       type="button"
       onClick={onClick}
       className={clsx(
-        'shrink-0 rounded-full border px-3.5 py-1.5 text-[13px] font-medium transition-colors',
+        'shrink-0 rounded-full border-none ring-1 px-3.5 py-1.5 text-sm font-medium transition-colors',
         isActive
-          ? 'border-brand-pink bg-brand-pink text-text-inverse'
-          : 'border-border-default bg-surface-primary text-text-secondary',
+          ? 'ring-brand-pink bg-brand-pink text-text-inverse'
+          : 'ring-brand-pink bg-surface-primary text-text-secondary',
       )}
     >
       {label}

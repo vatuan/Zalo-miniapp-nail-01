@@ -1,4 +1,5 @@
 import React from 'react'
+import { HiTicket } from 'react-icons/hi2'
 import { Box, Text, useSnackbar } from 'zmp-ui'
 
 import { canRedeem, memberProfile, RedeemOption } from '@/mocks/loyalty-data'
@@ -28,7 +29,7 @@ export function RedeemCard({ option }: RedeemCardProps) {
       )}
     >
       <Box className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-pink-ultra-soft text-xl">
-        🎟️
+        <HiTicket size={20} className="text-brand-pink" />
       </Box>
 
       <Box className="flex flex-1 flex-col gap-0.5">
@@ -43,7 +44,7 @@ export function RedeemCard({ option }: RedeemCardProps) {
         onClick={handleRedeem}
         disabled={!isAffordable}
         className={clsx(
-          'shrink-0 rounded-full px-4 py-1.5 text-[13px] font-semibold transition-colors',
+          'shrink-0 rounded-full border-none px-4 py-1.5 text-sm font-semibold transition-colors',
           isAffordable
             ? 'bg-button-primary-bg text-button-primary-fg active:opacity-80'
             : 'cursor-not-allowed bg-surface-muted text-text-secondary',

@@ -19,9 +19,7 @@ function TimeSlotGroup({ dayPart, slots, onSelect }: TimeSlotGroupProps) {
   if (slots.length === 0) return null
   return (
     <Box className="flex flex-col gap-2">
-      <Text className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">
-        {DAY_PART_LABEL[dayPart]}
-      </Text>
+      <Text className="text-xs font-semibold uppercase tracking-widest text-brand-pink">{DAY_PART_LABEL[dayPart]}</Text>
       <Box className="grid grid-cols-4 gap-2">
         {slots.map((slot) => (
           <TimeSlotChip key={slot.value} slot={slot} onClick={onSelect} />
@@ -57,11 +55,13 @@ export function TimeSlotsSection({
   return (
     <Box className="flex flex-col gap-3">
       <Box className="flex items-baseline justify-between">
-        <Text className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">
+        <Text className="text-sm font-semibold uppercase tracking-widest text-brand-dark">
           Chọn giờ – {formatVietnameseDate(pickedDate)}
         </Text>
         {totalDurationMin > 0 ? (
-          <Text className="text-[11px] text-text-secondary">~{totalDurationMin} phút</Text>
+          <Text className="rounded-md shadow-md ring-1 px-3 py-1 ring-brand-dark text-xs text-brand-dark">
+            ~{totalDurationMin} phút
+          </Text>
         ) : null}
       </Box>
 
@@ -82,7 +82,7 @@ export function TimeSlotsSection({
           <Text className="text-sm text-text-primary">Ngày này đã kín, chọn ngày khác</Text>
         </Box>
       ) : (
-        <Box className="flex flex-col gap-4">
+        <Box className="flex flex-col gap-6">
           <TimeSlotGroup dayPart="morning" slots={morningSlots} onSelect={onSelect} />
           <TimeSlotGroup dayPart="afternoon" slots={afternoonSlots} onSelect={onSelect} />
           <TimeSlotGroup dayPart="evening" slots={eveningSlots} onSelect={onSelect} />

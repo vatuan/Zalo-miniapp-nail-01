@@ -49,7 +49,7 @@ export function ReviewsSection({ ratingAvg, ratingCount, reviews, onSeeAll }: Re
         <button
           type="button"
           onClick={onSeeAll}
-          className="flex items-center justify-center gap-1 self-center rounded-full border border-brand-pink bg-surface-primary px-4 py-1.5 text-xs font-semibold text-brand-pink"
+          className="flex items-center justify-center gap-1 self-center rounded-full border-none ring-1 ring-brand-pink bg-surface-primary px-4 py-1.5 text-xs font-semibold text-brand-pink"
         >
           Xem tất cả đánh giá <HiArrowRight size={12} />
         </button>

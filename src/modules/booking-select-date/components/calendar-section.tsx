@@ -1,8 +1,8 @@
 import 'react-calendar/dist/Calendar.css'
 
 import React from 'react'
-import { HiOutlineExclamationTriangle } from 'react-icons/hi2'
 import Calendar from 'react-calendar'
+import { HiChevronLeft, HiChevronRight, HiOutlineExclamationTriangle } from 'react-icons/hi2'
 import { Box, Text } from 'zmp-ui'
 
 import { getMockBookedSlots, isHoliday } from '@/mocks/service-data'
@@ -50,8 +50,8 @@ export function CalendarSection({ pickedDate, today, holidayLabel, onSelectDate 
         '[&_.react-calendar__tile--active_.bg-brand-pink]:!bg-text-inverse',
       ].join(' ')}
     >
-      <Text className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">Chọn ngày</Text>
-      <Box className="rounded-2xl border border-brand-pink-soft bg-card-surface p-2">
+      <Text className="font-semibold text-sm uppercase tracking-widest text-brand-dark">Chọn ngày</Text>
+      <Box className="rounded-md border border-brand-pink-soft bg-card-surface p-2">
         <Calendar
           value={pickedDate}
           onChange={(value) => {
@@ -65,6 +65,8 @@ export function CalendarSection({ pickedDate, today, holidayLabel, onSelectDate 
           maxDetail="month"
           showNeighboringMonth={false}
           minDate={today}
+          prevLabel={<HiChevronLeft size={16} />}
+          nextLabel={<HiChevronRight size={16} />}
           prev2Label={null}
           next2Label={null}
         />

@@ -16,9 +16,9 @@ export function ShareButton({ title, imageUrl }: ShareButtonProps) {
       type="button"
       onClick={() => share(title, imageUrl)}
       aria-label="Chia sẻ"
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-border-soft bg-surface-primary active:scale-95"
+      className="flex h-10 w-10 items-center justify-center rounded-full border-none ring-1 ring-brand-pink bg-surface-primary active:scale-95"
     >
-      <HiOutlineShare size={18} className="text-text-primary" />
+      <HiOutlineShare size={18} className="text-brand-pink" />
     </button>
   )
 }

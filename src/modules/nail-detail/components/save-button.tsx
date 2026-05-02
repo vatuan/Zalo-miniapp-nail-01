@@ -8,7 +8,7 @@ type SaveButtonProps = {
   onToggle: () => void
 }
 
-const PULSE_DURATION_MS = 600
+const PULSE_DURATION_MS = 300
 
 export function SaveButton({ isSaved, onToggle }: SaveButtonProps) {
   const [isPulsing, setIsPulsing] = useState(false)
@@ -29,7 +29,7 @@ export function SaveButton({ isSaved, onToggle }: SaveButtonProps) {
       type="button"
       onClick={handleClick}
       aria-label={isSaved ? 'Bỏ lưu mẫu' : 'Lưu mẫu'}
-      className="relative flex h-10 w-10 items-center justify-center rounded-full border border-brand-pink-soft bg-surface-primary active:scale-95"
+      className="relative flex h-10 w-10 items-center justify-center rounded-full border-none ring-1 ring-brand-pink bg-surface-primary active:scale-95"
     >
       {isPulsing ? (
         <span aria-hidden className="absolute inset-0 animate-ping rounded-full bg-brand-pink-soft opacity-60" />
@@ -37,7 +37,7 @@ export function SaveButton({ isSaved, onToggle }: SaveButtonProps) {
       {isSaved ? (
         <HiHeart size={20} className={clsx('relative text-brand-pink')} />
       ) : (
-        <HiOutlineHeart size={20} className="relative text-text-secondary" />
+        <HiOutlineHeart size={20} className="relative text-brand-pink" />
       )}
     </button>
   )

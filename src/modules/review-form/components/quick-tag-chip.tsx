@@ -14,10 +14,10 @@ export function QuickTagChip({ label, isSelected, onToggle }: QuickTagChipProps)
       type="button"
       onClick={onToggle}
       className={clsx(
-        'rounded-full border px-3.5 py-1.5 text-[13px] font-medium transition-colors',
+        'rounded-full border-none ring-1  px-3.5 py-1.5 text-[13px] font-medium transition-colors',
         isSelected
-          ? 'border-brand-pink bg-brand-pink text-text-inverse'
-          : 'border-border-default bg-surface-primary text-text-secondary',
+          ? 'ring-brand-pink bg-brand-pink text-text-inverse'
+          : 'ring-brand-pink bg-surface-primary text-brand-pink',
       )}
     >
       {label}

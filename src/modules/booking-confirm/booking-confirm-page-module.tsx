@@ -177,7 +177,7 @@ export function BookingConfirmPageModule() {
 
         <PolicyAccordion />
 
-        <Box className="h-16 w-full" />
+        <Box className="h-5 w-full" />
       </Box>
 
       <ConfirmBar isSubmitting={isSubmitting} isEnabled={isReady} onConfirm={handleConfirm} />

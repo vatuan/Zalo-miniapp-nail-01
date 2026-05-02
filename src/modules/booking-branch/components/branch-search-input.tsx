@@ -24,7 +24,7 @@ export function BranchSearchInput({
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
-        className="w-full rounded-xl bg-surface-muted py-2.5 pl-10 pr-10 text-sm text-text-primary placeholder:text-text-secondary border-none ring-1 ring-brand-pink focus:border-brand-pink focus:outline-none"
+        className="w-full rounded-xl py-2.5 pl-10 pr-10 text-sm text-text-primary placeholder:text-text-secondary border-none ring-1 ring-brand-pink focus:border-brand-pink focus:outline-none"
       />
 
       {value ? (

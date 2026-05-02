@@ -43,7 +43,7 @@ export function PhotoUploadSection({ photos, maxPhotos, onAdd, onRemove }: Photo
           <button
             type="button"
             onClick={onAdd}
-            className="flex h-20 w-20 shrink-0 flex-col items-center justify-center gap-1 rounded-xl border border-dashed border-border-default bg-surface-primary text-text-secondary active:bg-surface-muted"
+            className="flex h-20 w-20 shrink-0 flex-col items-center justify-center gap-1 rounded-xl border border-dashed border-brand-pink-soft bg-surface-primary text-text-secondary active:bg-surface-muted"
           >
             <HiOutlineCamera size={20} />
             <Text className="text-[11px] text-text-secondary">Thêm ảnh</Text>

@@ -18,8 +18,8 @@ export function PromotionsTabBar({ activeTab, onTabChange }: PromotionsTabBarPro
           type="button"
           onClick={() => onTabChange(idx as 0 | 1)}
           className={clsx(
-            '-mb-px flex-1 border-b-2 py-3 text-[14px] font-semibold transition-colors',
-            activeTab === idx ? 'border-brand-pink text-brand-pink' : 'border-transparent text-text-secondary',
+            '-mb-px border-none flex-1 py-3 text-sm font-semibold transition-colors',
+            activeTab === idx ? 'bg-brand-pink text-white' : 'border-transparent text-text-secondary',
           )}
         >
           {label}

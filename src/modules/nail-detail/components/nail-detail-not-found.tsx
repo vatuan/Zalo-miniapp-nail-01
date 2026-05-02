@@ -17,7 +17,7 @@ export function NailDetailNotFound({ onBack }: NailDetailNotFoundProps) {
       <button
         type="button"
         onClick={onBack}
-        className="rounded-full border border-brand-pink bg-transparent px-6 py-2 text-sm font-semibold text-brand-pink"
+        className="rounded-full border-none ring-1 ring-brand-pink bg-transparent px-6 py-2 text-sm font-semibold text-brand-pink"
       >
         Quay lại Gallery
       </button>

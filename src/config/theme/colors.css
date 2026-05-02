@@ -38,6 +38,7 @@
   --color-status-danger: #dc2626;
   --color-status-danger-soft: #fee2e2;
   --color-status-warning-soft: #fef3c7;
+  --color-status-success: #16a34a;
   --color-status-success-soft: #dcfce7;
   --color-overlay-backdrop: rgba(0, 0, 0, 0.35);
 }
